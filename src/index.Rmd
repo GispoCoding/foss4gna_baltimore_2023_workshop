@@ -84,10 +84,10 @@ Ohessa muutamia web-sivustoja, joista saat lisätietoja:
 <http://www.osgeo.fi>
 :::
 
-## Virheet
+## Errors
 
 Jos havaitset materiaalissa virheitä, niin pyydämme ilmoittamaan niistä kouluttajalle tai sähköpostilla [info\@gispo.fi-osoitteeseen](mailto:info@gispo.fi-osoitteeseen){.email}.
 
-## Lisenssi ja oikeudet
+## License and user rights
 
-Nämä materiaalit on "\_\_\_\_\_"-kurssille kehittänyt Gispo Oy. Materiaalit on lisensoitu seuraavalla lisenssillä: [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)
+These materials are developed by Gispo Ltd. Materials are licensed under: [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)
