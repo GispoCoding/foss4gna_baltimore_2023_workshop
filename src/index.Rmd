@@ -1,9 +1,9 @@
 ---
-title: "Introduction to QGIS"
+title: "Building an Enterprise GIS Workflow with QGIS and PostGIS"
 author: "Gispo Ltd."
 date: "`r Sys.Date()`"
 site: "bookdown::bookdown_site"
-abstract: "A course covering advanced GeoServer topics."
+abstract: "Workshop delivered in FOSS4G Prizren 2023."
 output:
     bookdown::html_book:
         toc: true
@@ -14,15 +14,21 @@ output:
 documentclass: book
 ---
 
-<!-- Harjoitukset -->
+<!-- Exercises -->
 
 # Template
 
-## Tervetuloa kurssille!
+## Welcome!
 
-Kurssilla tehdään ja opitaan niitä ja näitä.
+Workshop Objectives:
 
-## Lukuohje
+\- Create an enterprise GIS workflow using QGIS and PostGIS.
+
+\- Explore the benefits of spatial databases and their role in GIS data management.
+
+\- Set up QGIS projects to optimize GIS data management.
+
+# Reading instructions
 
 **Web-selaimessa** suoritettavat komennot on merkitty seuraavasti:
 
@@ -84,4 +90,4 @@ Jos havaitset materiaalissa virheitä, niin pyydämme ilmoittamaan niistä koulu
 
 ## Lisenssi ja oikeudet
 
-Nämä materiaalit on "_____"-kurssille kehittänyt Gispo Oy. Materiaalit on lisensoitu seuraavalla lisenssillä: [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)
+Nämä materiaalit on "\_\_\_\_\_"-kurssille kehittänyt Gispo Oy. Materiaalit on lisensoitu seuraavalla lisenssillä: [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)
