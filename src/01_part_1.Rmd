@@ -1,0 +1,26 @@
+# Exercise 1: Database Creation and Integration
+
+Imagine you are the Head of GIS or any other GIS representative in the Refuge Camp of the x in y, working for the International Organization for Migration (IOM).
+
+### Installation and Configuration
+
+uc
+
+### Creating a Spatial Database
+
+::: code-box
+CREATE DATABASE camp_facilities_db;
+:::
+
+::: code-box
+CREATE EXTENSION postgis;
+:::
+
+### Integrating the Database with QGIS
+
+1.  In QGIS, go to the "Browser" panel and expand the "PostGIS" node.
+2.  Right-click on "PostGIS" and select "New Connection" to open the "Add PostGIS Layers" dialog.
+3.  Enter the necessary connection details, including the database name, host, port, username, and password.
+4.  Click "Test Connection" to verify the connection and ensure it is successful.
+5.  Once the connection is verified, click "OK" to close the dialog and establish the connection.
+6.  The database should now appear under the "PostGIS" node in the "Browser" panel.

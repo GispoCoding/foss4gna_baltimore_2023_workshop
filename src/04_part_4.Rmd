@@ -1,0 +1,55 @@
+# Exercise 4: Creating Lookup Tables and Utilizing Lookup Values
+
+Now it's time for you to think about data integrity! You have noticed that maintaining consistent and accurate data can sometimes be a challenge. Inconsistent values, misspellings, or different variations of the same category can lead to data quality issues and hinder effective analysis. This is where lookup tables come in, providing a solution to enhance data integrity and improve data entry workflows.
+
+## Identifying Attributes Requiring Predefined Values
+
+By identifying specific attributes that benefit from predefined values, we can ensure consistency and enforce data integrity throughout our database.
+
+Looking at the tables we have created, we can identify certain attributes that require predefined values.
+
+| **Table**                 | **Attribute**      | **Predefined Values**                |
+|-----------------------|------------------|-------------------------------|
+| Dwellings                 | Occupancy Status   | Occupied, Vacant, Under Construction |
+| Water Distribution Points | Operational Status | Active, Temporarily Closed           |
+| Educational Facilities    | Facility Type      | School, Vocational Training Center   |
+
+## Creating an Enumeration Table
+
+::: code-box
+-- Lookup table for Dwellings' Occupancy Status CREATE TABLE dwellings_occupancy_status ( id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, status VARCHAR(50) NOT NULL );
+
+-- Lookup table for Water Distribution Points' Operational Status CREATE TABLE water_distribution_operational_status ( id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, status VARCHAR(50) NOT NULL );
+
+-- Lookup table for Educational Facilities' Facility Type CREATE TABLE educational_facilities_facility_type ( id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, type VARCHAR(50) NOT NULL );
+:::
+
+Add foreign keys to the main tables. foreign keys establish a relationship between tables by
+
+## Establishing Relationships with the Main Data Table
+
+referencing the primary key of one table from another table, ensuring referential integrity and maintaining data consistency.
+
+::: code-box
+-- Add foreign key to Dwellings table for Occupancy Status ALTER TABLE dwellings ADD COLUMN occupancy_status_id INTEGER REFERENCES dwellings_occupancy_status(id);
+
+-- Add foreign key to Water Distribution Points table for Operational Status ALTER TABLE water_distribution_points ADD COLUMN operational_status_id INTEGER REFERENCES water_distribution_operational_status(id);
+
+-- Add foreign key to Educational Facilities table for Facility Type ALTER TABLE educational_facilities ADD COLUMN facility_type_id INTEGER REFERENCES educational_facilities_facility_type(id);
+:::
+
+## Populating the Enumeration Table
+
+Now we will populate the lookup tables with predefined values. You can also edit these afterwords in QGIS.
+
+::: code-box
+-- Populate Dwellings' Occupancy Status lookup table INSERT INTO dwellings_occupancy_status (status) VALUES ('Occupied'), ('Vacant'), ('Under Construction');
+
+-- Populate Water Distribution Points' Operational Status lookup table INSERT INTO water_distribution_operational_status (status) VALUES ('Active'), ('Temporarily Closed');
+
+-- Populate Educational Facilities' Facility Type lookup table INSERT INTO educational_facilities_facility_type (type) VALUES ('School'), ('Vocational Training Center');
+:::
+
+## Using the Enumeration Table in QGIS
+
+You can further customize and edit these tables in QGIS. To load them into QGIS, simply double-click the tables from the browser panel, and they will be added to your project. You can visualize and explore the data using the attribute table view in QGIS. In the next phase, we will establish connections between these tables and the main tables, laying the foundation for ensuring data integrity and maintaining consistency in our database.

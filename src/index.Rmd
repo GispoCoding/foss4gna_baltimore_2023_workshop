@@ -16,57 +16,53 @@ documentclass: book
 
 <!-- Exercises -->
 
-# Template
-
-## Welcome!
+# Welcome!
 
 Workshop Objectives:
 
-\- Create an enterprise GIS workflow using QGIS and PostGIS.
+-   Create an enterprise GIS workflow using QGIS and PostGIS.
 
-\- Explore the benefits of spatial databases and their role in GIS data management.
+-   Explore the benefits of spatial databases and their role in GIS data management.
 
-\- Set up QGIS projects to optimize GIS data management.
+-   Set up QGIS projects to optimize GIS data management.
 
 # Reading instructions
 
-**Web-selaimessa** suoritettavat komennot on merkitty seuraavasti:
+The commands executed in the web browser are indicated as follows:
 
 ::: note-box
 <http://localhost:8080/geoserver>
 :::
 
-**Komentorivillä** suoritettavat komennot on merkitty seuraavasti:
+The commands executed on the command line are indicated as follows:
 
 ::: commandline-box
 sudo lsb_release -a
 :::
 
-**Tiedostojen sisältö** on esitetty seuraavasti:
+The contents of the files are presented as follows:
 
 ::: file-content-box
 #IPv4 local connections: #host all all 127.0.0.1/32 md5
 :::
 
-**HTML- ja CSS-koodit, SQL-komennot sekä Python-scriptit** on esitetty seuraavasti:
+The HTML and CSS codes, SQL commands, and Python scripts are presented as follows:
 
 ::: code-box
 SELECT version();
 :::
 
-**Kysymykset, lisätiedot ja vihjeet** on esitetty seuraavasti:
+The questions, additional information, and hints are presented as follows:
 
 ::: hint-box
-Mistä löydät tietoa GeoServeristä?
+Where can you find information about GeoServer?
 
-GeoServerillä on omat kotisivut.
+GeoServer has its own website.
 
-Psst! Tietoa GeoServeristä löydät internetistä.
+Psst! You can find information about GeoServer on the internet.
 :::
 
-## Mistä lisätietoja?
-
-Ohessa muutamia web-sivustoja, joista saat lisätietoja:
+## Software in question and further information
 
 ::: note-box
 <http://www.qgis.org/>
@@ -77,16 +73,16 @@ Ohessa muutamia web-sivustoja, joista saat lisätietoja:
 :::
 
 ::: note-box
-<http://gis.stackexchange.com/>
+<https://www.postgis.net/>
 :::
 
 ::: note-box
-<http://www.osgeo.fi>
+<https://postgis.net/documentation//>
 :::
 
 ## Errors
 
-Jos havaitset materiaalissa virheitä, niin pyydämme ilmoittamaan niistä kouluttajalle tai sähköpostilla [info\@gispo.fi-osoitteeseen](mailto:info@gispo.fi-osoitteeseen){.email}.
+If you notice any errors in the material, please inform the trainer/workshop facilitator.
 
 ## License and user rights
 
