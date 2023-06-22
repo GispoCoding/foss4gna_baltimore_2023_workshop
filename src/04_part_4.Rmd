@@ -9,7 +9,7 @@ By identifying specific attributes that benefit from predefined values, we can e
 Looking at the tables we have created, we can identify certain attributes that require predefined values.
 
 | **Table**                 | **Attribute**      | **Predefined Values**                |
-|-----------------------|------------------|-------------------------------|
+|---------------------------|--------------------|--------------------------------------|
 | Dwellings                 | Occupancy Status   | Occupied, Vacant, Under Construction |
 | Water Distribution Points | Operational Status | Active, Temporarily Closed           |
 | Educational Facilities    | Facility Type      | School, Vocational Training Center   |
@@ -17,11 +17,16 @@ Looking at the tables we have created, we can identify certain attributes that r
 ## Creating an Enumeration Table
 
 ::: code-box
--- Lookup table for Dwellings' Occupancy Status CREATE TABLE dwellings_occupancy_status ( id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, status VARCHAR(50) NOT NULL );
+``` sql
+-- Lookup table for Dwellings' Occupancy Status 
+CREATE TABLE dwellings_occupancy_status ( id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, status VARCHAR(50) NOT NULL );
 
--- Lookup table for Water Distribution Points' Operational Status CREATE TABLE water_distribution_operational_status ( id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, status VARCHAR(50) NOT NULL );
+-- Lookup table for Water Distribution Points' Operational Status 
+CREATE TABLE water_distribution_operational_status ( id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, status VARCHAR(50) NOT NULL );
 
--- Lookup table for Educational Facilities' Facility Type CREATE TABLE educational_facilities_facility_type ( id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, type VARCHAR(50) NOT NULL );
+-- Lookup table for Educational Facilities' Facility Type 
+CREATE TABLE educational_facilities_facility_type ( id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, type VARCHAR(50) NOT NULL ); 
+```
 :::
 
 Add foreign keys to the main tables. foreign keys establish a relationship between tables by
@@ -31,11 +36,16 @@ Add foreign keys to the main tables. foreign keys establish a relationship betwe
 referencing the primary key of one table from another table, ensuring referential integrity and maintaining data consistency.
 
 ::: code-box
--- Add foreign key to Dwellings table for Occupancy Status ALTER TABLE dwellings ADD COLUMN occupancy_status_id INTEGER REFERENCES dwellings_occupancy_status(id);
+``` sql
+-- Add foreign key to Dwellings table for Occupancy Status 
+ALTER TABLE dwellings ADD COLUMN occupancy_status_id INTEGER REFERENCES dwellings_occupancy_status(id); 
 
--- Add foreign key to Water Distribution Points table for Operational Status ALTER TABLE water_distribution_points ADD COLUMN operational_status_id INTEGER REFERENCES water_distribution_operational_status(id);
+-- Add foreign key to Water Distribution Points table for Operational Status 
+ALTER TABLE water_distribution_points ADD COLUMN operational_status_id INTEGER REFERENCES water_distribution_operational_status(id); 
 
--- Add foreign key to Educational Facilities table for Facility Type ALTER TABLE educational_facilities ADD COLUMN facility_type_id INTEGER REFERENCES educational_facilities_facility_type(id);
+-- Add foreign key to Educational Facilities table for Facility Type 
+ALTER TABLE educational_facilities ADD COLUMN facility_type_id INTEGER REFERENCES educational_facilities_facility_type(id);
+```
 :::
 
 ## Populating the Enumeration Table
@@ -43,11 +53,16 @@ referencing the primary key of one table from another table, ensuring referentia
 Now we will populate the lookup tables with predefined values. You can also edit these afterwords in QGIS.
 
 ::: code-box
--- Populate Dwellings' Occupancy Status lookup table INSERT INTO dwellings_occupancy_status (status) VALUES ('Occupied'), ('Vacant'), ('Under Construction');
+``` sql
+-- Populate Dwellings' Occupancy Status lookup table 
+INSERT INTO dwellings_occupancy_status (status) VALUES ('Occupied'), ('Vacant'), ('Under Construction');
 
--- Populate Water Distribution Points' Operational Status lookup table INSERT INTO water_distribution_operational_status (status) VALUES ('Active'), ('Temporarily Closed');
+-- Populate Water Distribution Points' Operational Status lookup table 
+INSERT INTO water_distribution_operational_status (status) VALUES ('Active'), ('Temporarily Closed');
 
--- Populate Educational Facilities' Facility Type lookup table INSERT INTO educational_facilities_facility_type (type) VALUES ('School'), ('Vocational Training Center');
+-- Populate Educational Facilities' Facility Type lookup table 
+INSERT INTO educational_facilities_facility_type (type) VALUES ('School'), ('Vocational Training Center');
+```
 :::
 
 ## Using the Enumeration Table in QGIS

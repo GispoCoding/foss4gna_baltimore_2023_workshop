@@ -49,7 +49,9 @@ The contents of the files are presented as follows:
 The HTML and CSS codes, SQL commands, and Python scripts are presented as follows:
 
 ::: code-box
+``` sql
 SELECT version();
+```
 :::
 
 The questions, additional information, and hints are presented as follows:

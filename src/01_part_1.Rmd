@@ -1,26 +1,97 @@
 # Exercise 1: Database Creation and Integration
 
-Imagine you are the Head of GIS or any other GIS representative in the Refuge Camp of the x in y, working for the International Organization for Migration (IOM).
+Imagine you are the Head of GIS or any other GIS representative in the Refuge Camp in Chattogram, Bangalesh, working for the International Organization for Migration (IOM).
 
-### Installation and Configuration
+### Installation and Configuration: QGIS
 
-uc
+You will need QGIS for this workshop. If you already have QGIS instaled, great! It is recommended to use the latest Long-Term Release (LTR) version, which can be downloaded from the official QGIS website: <https://www.qgis.org/en/site/forusers/download.html>. Due to workshop schedule constraints and potential internet limitations, if you already have an earlier version of QGIS installed on your computer, you can use that version for the workshop.
 
-### Creating a Spatial Database
+However, it is still recommended to have the latest Long-Term Release (LTR) version of QGIS to ensure compatibility and access to the most up-to-date features.
+
+### Installation and Configuration: PostgreSQL
+
+You have the flexibility to choose between two workshop setups: deploying a PostgreSQL database on your local computer or utilizing a remote cloud provider, such as Aiven, for your database needs.
+
+Use the following table to guide your choice of setup.
+
++-------------------------------+-----------------------------------------------------------------------------------------------------------------+------------------------------------+------------------------------------------------+
+| **Workshop Setup**            | **Description**                                                                                                 | **Pluses**                         | **Minuses**                                    |
++===============================+=================================================================================================================+====================================+================================================+
+| Local Computer Setup          | Deploy PostgreSQL on your local computer and have full control over the database environment for the workshop.  | \- Get started right away          | \- No familiarity with a remote setup          |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------+------------------------------------+------------------------------------------------+
+| Remote Cloud Provider (Aiven) | Utilize a remote PostgreSQL database provided by Aiven, offering convenience and scalability for your workshop. | \- Familiarize with a remote setup | \- Need to create a new account                |
+|                               |                                                                                                                 |                                    |                                                |
+|                               |                                                                                                                 |                                    | \- Potential internet issues in the facilities |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------+------------------------------------+------------------------------------------------+
+
+#### Deploying PostgreSQL on localhost
+
+You also have the option to install PostgreSQL on your localhost, regardless of your operating system. Installing PostgreSQL on your local computer is straightforward and can be done by following the guidelines provided on the official PostgreSQL website: [**https://www.postgresql.org/download/**](https://www.postgresql.org/download/).
+
+To proceed with the installation, please ensure you are using PostgreSQL version 15. If you already have an earlier version of PostgreSQL installed on your system, you can continue using that version as well.
+
+Here are the steps to install PostgreSQL on your local computer:
+
+1.  Visit the PostgreSQL website at [**https://www.postgresql.org/download/**](https://www.postgresql.org/download/) and select the appropriate download link for your operating system.
+
+2.  Follow the installation instructions specific to your operating system to complete the installation process.
+
+3.  During the installation, you will be prompted to configure the PostgreSQL installation. You can choose the default settings or customize them based on your preferences.
+
+4.  Once the installation is complete, PostgreSQL will be ready to use on your localhost.
+
+By installing PostgreSQL on your local computer, you will have a dedicated database server to work with for your workshop. This will allow you to have full control over the database environment and perform all necessary tasks directly on your machine."
+
+#### Managed remote database (Aiven)
+
+You also have the option to utilize a managed remote database for your workshop. There are various cloud providers that offer managed PostgreSQL databases, and one such provider is Aiven. Aiven was specifically chosen for this workshop due to its user-friendly interface and their generous support towards open-source initiatives.
+
+If you decide to use Aiven for your workshop and would like to take advantage of free bonus credits for a more powerful PostgreSQL database, please provide your email address through the following Google Forms link. This will ensure you receive the bonus credits to enhance your database experience.
+
+To create and connect to a remote PostgreSQL database on Aiven, please follow the guidelines below:
+
+1.  Sign up for an account on the Aiven website ([**https://aiven.io/**](https://aiven.io/)) if you haven't already.
+
+2.  Log in to your Aiven account and navigate to the PostgreSQL service.
+
+3.  Click on 'Create Service' to initiate the creation of a new PostgreSQL database.
+
+4.  Select the desired specifications and configurations for your database, ensuring it meets your requirements.
+
+5.  Once the database is created, you will receive the necessary connection details such as host, port, username, and password.
+
+6.  Use these connection details to establish a connection to your remote PostgreSQL database from your local environment or any desired client tool.
+
+By following these guidelines, you will be able to leverage the capabilities of a remote PostgreSQL database provided by Aiven, empowering you to work with a more robust and scalable infrastructure for your workshop.Creating a Spatial Database
+
+#### Creating the database
 
 ::: code-box
+``` sql
 CREATE DATABASE camp_facilities_db;
+```
 :::
 
 ::: code-box
+``` sql
 CREATE EXTENSION postgis;
+```
 :::
 
 ### Integrating the Database with QGIS
 
 1.  In QGIS, go to the "Browser" panel and expand the "PostGIS" node.
+
 2.  Right-click on "PostGIS" and select "New Connection" to open the "Add PostGIS Layers" dialog.
+
 3.  Enter the necessary connection details, including the database name, host, port, username, and password.
+
 4.  Click "Test Connection" to verify the connection and ensure it is successful.
+
 5.  Once the connection is verified, click "OK" to close the dialog and establish the connection.
+
 6.  The database should now appear under the "PostGIS" node in the "Browser" panel.
+
+![Now you can see connection and explore the database:](img/p1/p_01_i_02.png)
+
+![](img/p1/03.png)

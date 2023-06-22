@@ -11,7 +11,7 @@ To begin, it is vital to address the following key question: "What specific info
 First, you need to acquire information as follows:
 
 | **Table**                 | **Table Name**            | **Attribute Information**    | **Geometry Type** |
-|----------------|----------------|------------------------|----------------|
+|---------------------------|---------------------------|------------------------------|-------------------|
 | Dwellings                 | dwellings                 | capacity, occupancy_status   | Polygon           |
 | Water Distribution Points | water_distribution_points | capacity, operational_status | Point             |
 | Educational Facilities    | educational_facilities    | facility_type, capacity      | Polygon           |
@@ -19,49 +19,31 @@ First, you need to acquire information as follows:
 ## Creating the Necessary Tables
 
 ::: code-box
+``` sql
 -- Creating the Dwellings table
-
 CREATE TABLE dwellings (
-
-    dwelling_id SERIAL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-
+    dwelling_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     capacity INTEGER,
-
     occupancy_status VARCHAR(255),
-
     geom GEOMETRY(POLYGON, 32646)
-
 );
 
 -- Creating the Water Distribution Points table
-
 CREATE TABLE water_distribution_points (
-
-    point_id SERIAL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-
+    point_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     capacity INTEGER,
-
     operational_status VARCHAR(255),
-
     geom GEOMETRY(POINT, 32646)
-
 );
 
 -- Creating the Educational Facilities table
-
 CREATE TABLE educational_facilities (
-
-    facility_id SERIAL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-
+    facility_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     facility_type VARCHAR(255),
-
     capacity INTEGER,
-
     geom GEOMETRY(POLYGON, 32646)
-
 );
+```
 :::
 
 Note that the code after the geometry type refers to the Coordinate Reference System (CRS). This CRS is commonly used in the UTM (Universal Transverse Mercator) projection for the region around Bangladesh, including our region of interest (Chattogram).
-
-## 
