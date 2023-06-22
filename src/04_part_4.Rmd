@@ -9,7 +9,7 @@ By identifying specific attributes that benefit from predefined values, we can e
 Looking at the tables we have created, we can identify certain attributes that require predefined values.
 
 | **Table**                 | **Attribute**      | **Predefined Values**                |
-|-----------------------|------------------|-------------------------------|
+|---------------------------|--------------------|--------------------------------------|
 | Dwellings                 | Occupancy Status   | Occupied, Vacant, Under Construction |
 | Water Distribution Points | Operational Status | Active, Temporarily Closed           |
 | Educational Facilities    | Facility Type      | School, Vocational Training Center   |
@@ -77,7 +77,7 @@ For example, in pgAdmin there's the "ERD for Database" functionality:
 
 ![](img/p1/table_relations.png)
 
-Try this by yourself, if have pgAdmin installed:
+Try this by yourself, if have pgAdmin installed, following the screenshot numbering:
 
 1.  Make the database connection
 2.  Double click the database connection
