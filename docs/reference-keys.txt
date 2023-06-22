@@ -10,7 +10,7 @@ deploying-postgresql-on-localhost
 managed-remote-database-aiven
 creating-the-database
 integrating-the-database-with-qgis
-data-model-design-and-creation
+exercise-2-data-structure-design-and-creation
 analyzing-requirements-and-designing-the-data-schema
 creating-the-necessary-tables
 exercise-3-creating-and-editing-data-in-qgis
@@ -24,6 +24,7 @@ creating-an-enumeration-table
 establishing-relationships-with-the-main-data-table
 populating-the-enumeration-table
 using-the-enumeration-table-in-qgis
+visualizing-the-relations-between-the-database-tables
 exercise-5-workflow-optimization-and-data-entry-forms
 designing-a-data-entry-form
 customizing-form-layout-and-behavior

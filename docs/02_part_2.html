@@ -7,7 +7,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="4 Data Model Design and Creation | Building an Enterprise GIS Workflow with QGIS and PostGIS" />
+<meta property="og:title" content="4 Exercise 2 Data Structure Design and Creation | Building an Enterprise GIS Workflow with QGIS and PostGIS" />
 <meta property="og:type" content="book" />
 
 
@@ -19,9 +19,9 @@
 <meta name="date" content="2023-06-22" />
 
 
-<meta name="description" content="4 Data Model Design and Creation | Building an Enterprise GIS Workflow with QGIS and PostGIS">
+<meta name="description" content="4 Exercise 2 Data Structure Design and Creation | Building an Enterprise GIS Workflow with QGIS and PostGIS">
 
-<title>4 Data Model Design and Creation | Building an Enterprise GIS Workflow with QGIS and PostGIS</title>
+<title>4 Exercise 2 Data Structure Design and Creation | Building an Enterprise GIS Workflow with QGIS and PostGIS</title>
 
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
@@ -141,7 +141,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">3.0.2</span> Installation and Configuration: PostgreSQL</a></li>
 <li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">3.0.3</span> Integrating the Database with QGIS</a></li>
 </ul></li>
-<li><a href="02_part_2.html#data-model-design-and-creation"><span class="toc-section-number">4</span> Data Model Design and Creation</a>
+<li><a href="02_part_2.html#exercise-2-data-structure-design-and-creation"><span class="toc-section-number">4</span> Exercise 2 Data Structure Design and Creation</a>
 <ul>
 <li><a href="02_part_2.html#analyzing-requirements-and-designing-the-data-schema"><span class="toc-section-number">4.1</span> Analyzing Requirements and Designing the Data Schema</a></li>
 <li><a href="02_part_2.html#creating-the-necessary-tables"><span class="toc-section-number">4.2</span> Creating the Necessary Tables</a></li>
@@ -160,6 +160,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><a href="04_part_4.html#establishing-relationships-with-the-main-data-table"><span class="toc-section-number">6.3</span> Establishing Relationships with the Main Data Table</a></li>
 <li><a href="04_part_4.html#populating-the-enumeration-table"><span class="toc-section-number">6.4</span> Populating the Enumeration Table</a></li>
 <li><a href="04_part_4.html#using-the-enumeration-table-in-qgis"><span class="toc-section-number">6.5</span> Using the Enumeration Table in QGIS</a></li>
+<li><a href="04_part_4.html#visualizing-the-relations-between-the-database-tables"><span class="toc-section-number">6.6</span> Visualizing the relations between the database tables</a></li>
 </ul></li>
 <li><a href="05_part_5.html#exercise-5-workflow-optimization-and-data-entry-forms"><span class="toc-section-number">7</span> Exercise 5: Workflow Optimization and Data Entry Forms</a>
 <ul>
@@ -184,8 +185,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="data-model-design-and-creation" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Data Model Design and Creation</h1>
+<div id="exercise-2-data-structure-design-and-creation" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Exercise 2 Data Structure Design and Creation</h1>
 <p>In this exercise we will focus on designing and creating the initial database schema for capturing information about dwellings, water distribution points, and educational facilities within the Kutupalong-Balukhali Expansion Site, a refugee camp in Chattogram, Bangladesh.</p>
 <div id="analyzing-requirements-and-designing-the-data-schema" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Analyzing Requirements and Designing the Data Schema</h2>
@@ -224,7 +225,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <td>Educational Facilities</td>
 <td>educational_facilities</td>
 <td>facility_type, capacity</td>
-<td>Polygon</td>
+<td>Point</td>
 </tr>
 </tbody>
 </table>
