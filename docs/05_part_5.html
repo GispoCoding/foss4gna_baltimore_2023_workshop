@@ -165,9 +165,9 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><a href="05_part_5.html#exercise-5-workflow-optimization-and-data-entry-forms"><span class="toc-section-number">7</span> Exercise 5: Workflow Optimization and Data Entry Forms</a>
 <ul>
 <li><a href="05_part_5.html#designing-a-data-entry-form"><span class="toc-section-number">7.1</span> Designing a Data Entry Form</a></li>
-<li><a href="05_part_5.html#customizing-form-layout-and-behavior"><span class="toc-section-number">7.2</span> Customizing Form Layout and Behavior</a></li>
+<li><a href="05_part_5.html#discovering-table-relations-in-qgis-before-setting-up-the-forms"><span class="toc-section-number">7.2</span> Discovering table relations in QGIS before setting up the forms</a></li>
 <li><a href="05_part_5.html#enabling-and-configuring-form-widgets"><span class="toc-section-number">7.3</span> Enabling and Configuring Form Widgets</a></li>
-<li><a href="05_part_5.html#testing-the-form-and-evaluating-efficiency"><span class="toc-section-number">7.4</span> Testing the Form and Evaluating Efficiency</a></li>
+<li><a href="05_part_5.html#going-beyond-the-basics"><span class="toc-section-number">7.4</span> Going beyond the basics</a></li>
 </ul></li>
 <li><a href="06_part_6.html#exercise-6-automating-data-entry-with-triggers-and-getting-insights-from-the-database"><span class="toc-section-number">8</span> Exercise 6: Automating Data Entry with Triggers and Getting Insights from the Database</a>
 <ul>
@@ -187,17 +187,56 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <div class="col-sm-12">
 <div id="exercise-5-workflow-optimization-and-data-entry-forms" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> Exercise 5: Workflow Optimization and Data Entry Forms</h1>
+<p>Next, we will customize the data entry form in QGIS to facilitate efficient data creation, enabling seamless workflows for both individual work and organization-wide processes.</p>
 <div id="designing-a-data-entry-form" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Designing a Data Entry Form</h2>
+<p>QGIS forms are a powerful tool that allows you to create customized data entry interfaces within QGIS. These forms provide a user-friendly way to input and edit attribute data, making it easier to capture and manage information effectively.</p>
+<p>QGIS forms can look something like below:</p>
+<p><img src="img/p1/qgis_form_example.png" /></p>
 </div>
-<div id="customizing-form-layout-and-behavior" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Customizing Form Layout and Behavior</h2>
+<div id="discovering-table-relations-in-qgis-before-setting-up-the-forms" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Discovering table relations in QGIS before setting up the forms</h2>
+<p>Our goal is to set up a QGIS form, similar to the example shown above. To begin, we need to bring the lookup tables into QGIS. Additionally, since the main tables have been modified, we should reopen them in QGIS. Remember, removing the data from the map window does not erase it from the database. Simply select all six tables and drag &amp; drop or double-click to add them to QGIS.</p>
+<p><img src="img/p1/add_rel_tables.png" /></p>
+<p>Next, open the project properties and navigate to the “Relations” section in the side panel.</p>
+<p><img src="img/p1/dis_rel.png" /></p>
+<ol style="list-style-type: decimal">
+<li><p>Select the “Discover Relations” option,</p></li>
+<li><p>which should display three rows of information representing the relationships between the tables you have created. Choose them all (with CTRL e.g.)</p></li>
+<li><p>Press Ok</p>
+<p><img src="img/p1/discover_relations.png" /></p></li>
+</ol>
 </div>
 <div id="enabling-and-configuring-form-widgets" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Enabling and Configuring Form Widgets</h2>
+<p>To enable forms to appear as popup windows, follow these steps:</p>
+<ul>
+<li><p>Select the Identify tool (1) in QGIS. This tool allows you to click on a feature and view a small popup window displaying attribute values related to that specific feature (2).</p></li>
+<li><p>To further streamline the process, you can configure QGIS to use the Identify tool for all layers instead of manually selecting a specific layer each time (3).</p></li>
+</ul>
+<p><img src="img/p1/identify_tool_setting_up.png" /></p>
+<p>Then we will can click one of the features and a pop-up window should come up:</p>
+<p><img src="img/p1/form.png" /></p>
+<p>We can tailor the form by opening each layer’s properties and choosing “Attributes Form”:</p>
+<p><img src="img/p1/prop_attributes_form.png" /></p>
+<p>Using the “Autogenerate” option provides a quick solution, but for more customization, you can opt for the “Drag and Drop Designer” to tailor the form according to your specific requirements. This allows you to have more control over the design and layout of the form.</p>
+<p>You can for example remove the id-column from the form so that the user does not see it.</p>
+<p><img src="img/p1/form_remove.png" /></p>
+<p>Then we’ll get to the good part, where you can see how QGIS already used the relations between the main table and the lookup tables:</p>
+<p><img src="img/p1/forms_relations.png" /></p>
+<ol style="list-style-type: decimal">
+<li><p>After choosing/activating the attribute of interest (in the upper right corner), see how QGIS has setup the “Relation Reference” widget type which refers the capability of the usage of the relation in-between the tables.</p></li>
+<li><p>QGIS understands that you want to display the “status” text from the lookup table</p></li>
+<li><p>It refers to the relation you setup earlier.</p></li>
+</ol>
 </div>
-<div id="testing-the-form-and-evaluating-efficiency" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Testing the Form and Evaluating Efficiency</h2>
+<div id="going-beyond-the-basics" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Going beyond the basics</h2>
+<p>There are many widgets in QGIS, like a checkbox for boolean data types, a calendar view for dates and so on. You can explore the list and try to add data types to your main tables and see how the widgets work.</p>
+<p>If this seems to much, try the tabs for understanding how you could guide your users to create data.</p>
+<p>For example you can setup some tabs in the form:</p>
+<p><img src="img/p1/form_add_tabs.png" /></p>
+<p>Here, we are adding a third Tab (in addition to “Main info” and “Other info”).</p>
 
 </div>
 </div>

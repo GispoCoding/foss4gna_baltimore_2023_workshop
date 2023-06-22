@@ -27,9 +27,9 @@ using-the-enumeration-table-in-qgis
 visualizing-the-relations-between-the-database-tables
 exercise-5-workflow-optimization-and-data-entry-forms
 designing-a-data-entry-form
-customizing-form-layout-and-behavior
+discovering-table-relations-in-qgis-before-setting-up-the-forms
 enabling-and-configuring-form-widgets
-testing-the-form-and-evaluating-efficiency
+going-beyond-the-basics
 exercise-6-automating-data-entry-with-triggers-and-getting-insights-from-the-database
 creating-triggers-for-data-entry-automation
 configuring-triggers
