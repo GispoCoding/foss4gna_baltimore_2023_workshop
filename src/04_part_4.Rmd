@@ -69,7 +69,7 @@ INSERT INTO educational_facilities_facility_type (type) VALUES ('School'), ('Voc
 
 You can further customize and edit these tables in QGIS. To load them into QGIS, simply double-click the tables from the browser panel, and they will be added to your project. You can visualize and explore the data using the attribute table view in QGIS. In the next phase, we will establish connections between these tables and the main tables, laying the foundation for ensuring data integrity and maintaining consistency in our database.
 
-#### Visualizing the relations between the database tables
+## Visualizing the relations between the database tables
 
 If you have installed a relational database management system such as pgAdmin or dBeaver you can visualize the relations.
 
