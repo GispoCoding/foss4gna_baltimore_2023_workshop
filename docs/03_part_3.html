@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Ltd." />
 
-<meta name="date" content="2023-06-16" />
+<meta name="date" content="2023-06-22" />
 
 
 <meta name="description" content="5 Exercise 3: Creating and Editing Data in QGIS | Building an Enterprise GIS Workflow with QGIS and PostGIS">
@@ -27,6 +27,71 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="custom.css" type="text/css" />
 
@@ -72,21 +137,21 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </ul></li>
 <li><a href="01_part_1.html#exercise-1-database-creation-and-integration"><span class="toc-section-number">3</span> Exercise 1: Database Creation and Integration</a>
 <ul>
-<li><a href="01_part_1.html#installation-and-configuration"><span class="toc-section-number">3.0.1</span> Installation and Configuration</a></li>
-<li><a href="01_part_1.html#creating-a-spatial-database"><span class="toc-section-number">3.0.2</span> Creating a Spatial Database</a></li>
+<li><a href="01_part_1.html#installation-and-configuration-qgis"><span class="toc-section-number">3.0.1</span> Installation and Configuration: QGIS</a></li>
+<li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">3.0.2</span> Installation and Configuration: PostgreSQL</a></li>
 <li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">3.0.3</span> Integrating the Database with QGIS</a></li>
 </ul></li>
 <li><a href="02_part_2.html#data-model-design-and-creation"><span class="toc-section-number">4</span> Data Model Design and Creation</a>
 <ul>
 <li><a href="02_part_2.html#analyzing-requirements-and-designing-the-data-schema"><span class="toc-section-number">4.1</span> Analyzing Requirements and Designing the Data Schema</a></li>
 <li><a href="02_part_2.html#creating-the-necessary-tables"><span class="toc-section-number">4.2</span> Creating the Necessary Tables</a></li>
-<li><a href="02_part_2.html#section"><span class="toc-section-number">4.3</span> </a></li>
 </ul></li>
 <li><a href="03_part_3.html#exercise-3-creating-and-editing-data-in-qgis"><span class="toc-section-number">5</span> Exercise 3: Creating and Editing Data in QGIS</a>
 <ul>
-<li><a href="03_part_3.html#loading-the-data-and-creating-new-features"><span class="toc-section-number">5.1</span> Loading the Data and Creating New Features</a></li>
-<li><a href="03_part_3.html#editing-existing-features"><span class="toc-section-number">5.2</span> Editing Existing Features</a></li>
-<li><a href="03_part_3.html#deleting-unnecessary-features"><span class="toc-section-number">5.3</span> Deleting Unnecessary Features</a></li>
+<li><a href="03_part_3.html#loading-some-aerial-imagery-for-context-in-qgis"><span class="toc-section-number">5.1</span> Loading some aerial imagery for context in QGIS</a></li>
+<li><a href="03_part_3.html#loading-the-data-and-creating-new-features"><span class="toc-section-number">5.2</span> Loading the Data and Creating New Features</a></li>
+<li><a href="03_part_3.html#editing-existing-features"><span class="toc-section-number">5.3</span> Editing Existing Features</a></li>
+<li><a href="03_part_3.html#deleting-unnecessary-features"><span class="toc-section-number">5.4</span> Deleting Unnecessary Features</a></li>
 </ul></li>
 <li><a href="04_part_4.html#exercise-4-creating-lookup-tables-and-utilizing-lookup-values"><span class="toc-section-number">6</span> Exercise 4: Creating Lookup Tables and Utilizing Lookup Values</a>
 <ul>
@@ -122,40 +187,59 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <div id="exercise-3-creating-and-editing-data-in-qgis" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Exercise 3: Creating and Editing Data in QGIS</h1>
 <p>Now you will put test the designed data model creating data in QGIS. This allows you to validate that you will be capturing the required information. Working directly in QGIS, you will experience the seamless integration between the software and the database.</p>
-<div id="loading-the-data-and-creating-new-features" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Loading the Data and Creating New Features</h2>
+<div id="loading-some-aerial-imagery-for-context-in-qgis" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Loading some aerial imagery for context in QGIS</h2>
+<p>Download and add the following .tif-file to your QGIS project:</p>
+<p><img src="img/p1/add_aerial_img.png" /></p>
+</div>
+<div id="loading-the-data-and-creating-new-features" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Loading the Data and Creating New Features</h2>
 <p>To proceed with the exercise, you will generate at least two features for each table in the data model.</p>
 <p>Load the table: In the “Browser” panel, expand the connected database, navigate to the desired table (e.g., “dwellings”), and double-click on it. The table will be loaded in the QGIS main window as a layer.</p>
+<p><img src="img/p1/add_table.png" /></p>
 <p>Switch to Edit mode: To enable editing on the layer, click on the “Toggle editing” button in the toolbar, or go to the “Layer” menu, select “Toggle Editing.” The layer is now ready for creating new features or editing existing ones.</p>
+<p><img src="img/p1/table_edit_mode.png" /></p>
 <p>Create a new feature: Click on the “Add Feature” button in the toolbar or go to the “Edit” menu, select “Add Feature.” Then, click on the map canvas to add a new feature to the layer. Fill in the attribute values for the feature in the attribute table or in the form that appears.</p>
+<p><img src="img/p1/add_feature.png" /></p>
 <p>Save the changes: After making edits or adding new features, save the changes by clicking on the “Save Layer Edits” button in the toolbar.</p>
+<p><img src="img/p1/save_features.png" /></p>
+<p>Now click the save features:</p>
+<p><img src="img/p1/saving_features_icon.png" /></p>
 </div>
-<div id="editing-existing-features" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Editing Existing Features</h2>
+<div id="editing-existing-features" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Editing Existing Features</h2>
 <p>Now you will explore the editing capabilities of QGIS, allowing you to modify both attribute information and geometries of the features you have just created.</p>
 <p>To make changes to attribute information of a feature in QGIS, follow these steps:</p>
-<p>Select the feature: Use the selection tool in QGIS to choose the feature you want to edit. You can select the feature either directly on the map canvas or by clicking on the corresponding row in the attribute table.</p>
-<ol style="list-style-type: decimal">
-<li><p>Open the attribute table: Double-click on the layer name in the “Layers” panel to open the attribute table for the selected layer.</p></li>
-<li><p>Edit attribute values: Locate the row corresponding to the selected feature and modify the attribute values as needed. Simply click on the cell you wish to change and enter the new value. Press Enter or move to another cell to save the changes.</p></li>
-<li><p>Edit an existing feature: Select the feature you want to edit by clicking on it in the map canvas or the attribute table. Make the desired changes to the attributes directly in the table or form.</p></li>
-</ol>
+<p>You can edit the features attribute information by opening the attribute table and having the edit mode activated, you can edit the attribute information.</p>
+<p><img src="img/p1/edit_features_attribute_table.png" /></p>
 <p>To modify the geometry of a feature in QGIS, follow these steps:</p>
 <ol style="list-style-type: decimal">
 <li><p>Select the feature: Use the selection tool to choose the feature whose geometry you want to edit. Click on the feature directly on the map canvas to select it.</p></li>
-<li><p>Enable editing: Ensure that the layer is in editing mode. If not, click on the “Toggle editing” button in the toolbar or go to the “Layer” menu and select “Toggle Editing.”</p></li>
-<li><p>Modify the geometry: With the feature selected, you can move, reshape, or resize it using the various editing tools available in the toolbar. For example, use the “Move Feature” tool to relocate the feature or the “Node Tool” to edit individual nodes or vertices of the geometry.</p></li>
-<li><p>Save the changes: After making the desired changes to either attribute information or geometry, click on the “Save Layer Edits” button in the toolbar or go to the “Layer” menu and select “Save Layer Edits” to save your modifications.</p></li>
+<li><p>Enable editing: Ensure that the layer is in editing mode with <img src="img/p1/editing_mode.png" />. If not, click on the “Toggle editing” button in the toolbar or go to the “Layer” menu and select “Toggle Editing.”</p></li>
+<li><p>Modify the geometry: With the feature selected, you can move, reshape, or resize it using the various editing tools available in the Advanced Digitizing -toolbar. For example, use the “Move Feature” tool to relocate the feature or the “Node Tool” to edit individual nodes or vertices of the geometry.</p>
+<div class="figure">
+<img src="img/p1/adv_digitizing_toolbar.png" alt="" />
+<p class="caption">Advanced Digitizing -toolbar as a whole</p>
+</div>
+<div class="figure">
+<img src="img/p1/node_tool_toolbar.png" alt="" />
+<p class="caption">Node tool activated</p>
+</div></li>
+<li><p>Save the changes: After making the desired changes to either attribute information or geometry, click on the “Save Layer Edits” button in the toolbar or go to the “Layer” menu and select “Save Layer Edits” to save your modifications.</p>
+<p><img src="img/p1/saving_features.png" /></p></li>
 </ol>
 </div>
-<div id="deleting-unnecessary-features" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Deleting Unnecessary Features</h2>
+<div id="deleting-unnecessary-features" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Deleting Unnecessary Features</h2>
 <p>Then it’s time to remove unwanted or unnecessary features in QGIS. Deleting features, one by one, or many at once is simple in QGIS.</p>
 <p>To delete one or many features in QGIS, follow this step-by-step guide:</p>
 <ol style="list-style-type: decimal">
-<li><p>Select the feature(s): Use the selection tool to choose the feature(s) you want to delete. For a single feature, click on it directly on the map canvas. For multiple features, you can either hold down the Ctrl or Shift key while clicking on individual features, or draw a selection box around them by clicking and dragging.</p></li>
-<li><p>Enable editing: Ensure that the layer is in editing mode. If not, click on the “Toggle editing” button in the toolbar or go to the “Layer” menu and select “Toggle Editing.”</p></li>
-<li><p>Delete the feature(s): Once the feature(s) is selected, press the Delete key on your keyboard or right-click on any of the selected features and choose the “Delete Selected” option. Confirm the deletion in the prompt that appears.</p></li>
+<li><p>Select the feature(s): Use the selection tool to choose the feature(s) you want to delete.</p>
+<p><img src="img/p1/select_features.png" /></p></li>
+<li><p>For a single feature, click on it directly on the map canvas. For multiple features, you can either hold down the Ctrl or Shift key while clicking on individual features, or draw a selection box around them by clicking and dragging.</p></li>
+<li><p>Enable editing: Ensure that the layer is in editing mode with . If not, click on the “Toggle editing” button in the toolbar or go to the “Layer” menu and select “Toggle Editing.”</p></li>
+<li><p>Delete the feature(s): Once the feature(s) is selected, press the Delete key on your keyboard or right-click on any of the selected features and choose the “Delete Selected” option. Confirm the deletion in the prompt that appears.</p>
+<p><img src="img/p1/toolbar_deleting.png" /></p></li>
 </ol>
 
 </div>
@@ -173,7 +257,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Building an Enterprise GIS Workflow with QGIS and PostGIS</h5>
-<span class="footer-version">v2023-06-16</span>
+<span class="footer-version">v2023-06-22</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 

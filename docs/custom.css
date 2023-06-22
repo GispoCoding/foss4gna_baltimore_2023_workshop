@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Courier:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap");
 
 /* Generics */
 body { overflow-x: hidden; }
@@ -319,10 +320,14 @@ th, td {
 }
 
 .code-box {
-    background: #B6D7A8;
+    background: #e8ecf3;
     padding: 10px;
     border: none;
     margin-bottom: 1rem;
+}
+
+code span {
+    font-family: 'Source Code Pro', monospace;
 }
 
 .code-box p {
