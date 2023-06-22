@@ -1,4 +1,4 @@
-# Data Model Design and Creation
+# Exercise 2 Data Structure Design and Creation
 
 In this exercise we will focus on designing and creating the initial database schema for capturing information about dwellings, water distribution points, and educational facilities within the Kutupalong-Balukhali Expansion Site, a refugee camp in Chattogram, Bangladesh.
 
@@ -14,7 +14,7 @@ First, you need to acquire information as follows:
 |---------------------------|---------------------------|------------------------------|-------------------|
 | Dwellings                 | dwellings                 | capacity, occupancy_status   | Polygon           |
 | Water Distribution Points | water_distribution_points | capacity, operational_status | Point             |
-| Educational Facilities    | educational_facilities    | facility_type, capacity      | Polygon           |
+| Educational Facilities    | educational_facilities    | facility_type, capacity      | Point             |
 
 ## Creating the Necessary Tables
 
