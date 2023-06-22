@@ -9,7 +9,7 @@ By identifying specific attributes that benefit from predefined values, we can e
 Looking at the tables we have created, we can identify certain attributes that require predefined values.
 
 | **Table**                 | **Attribute**      | **Predefined Values**                |
-|---------------------------|--------------------|--------------------------------------|
+|-----------------------|------------------|-------------------------------|
 | Dwellings                 | Occupancy Status   | Occupied, Vacant, Under Construction |
 | Water Distribution Points | Operational Status | Active, Temporarily Closed           |
 | Educational Facilities    | Facility Type      | School, Vocational Training Center   |
@@ -33,7 +33,7 @@ Add foreign keys to the main tables. foreign keys establish a relationship betwe
 
 ## Establishing Relationships with the Main Data Table
 
-referencing the primary key of one table from another table, ensuring referential integrity and maintaining data consistency.
+Referencing the primary key of one table from another table, ensuring referential integrity and maintaining data consistency.
 
 ::: code-box
 ``` sql
