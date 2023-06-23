@@ -1,9 +1,0 @@
-# Exercise 6: Automating Data Entry with Triggers and Getting Insights from the Database
-
-## Creating Triggers for Data Entry Automation
-
-## Configuring Triggers
-
-## Testing Triggers
-
-## Performing Spatial Queries and Analysis
