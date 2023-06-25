@@ -31,6 +31,6 @@ designing-a-data-entry-form
 discovering-table-relations-in-qgis-before-setting-up-the-forms
 enabling-and-configuring-form-widgets
 going-beyond-the-basics
-exercise-6-advanced-topis
+exercise-6-advanced-topics
 creating-triggers-for-data-entry-automation
 creating-some-sample-data
