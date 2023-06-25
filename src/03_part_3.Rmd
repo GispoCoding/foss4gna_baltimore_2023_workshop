@@ -4,9 +4,11 @@ Now you will put test the designed data model creating data in QGIS. This allows
 
 ## Loading some aerial imagery for context in QGIS
 
-Download and add the following .tif-file to your QGIS project:
+Download some recent aerial imagery that your team and collaborators have acquired from the area of interest from the this [link (in Google Drive)](https://drive.google.com/file/d/1pUneAy-ZPKMJRh2z2UOPWKlSZa44CvMS/view?usp=sharing), and add the .tif-file to your QGIS project:
 
 ![](img/p1/add_aerial_img.png)
+
+The data is provided by the International Organization for Migration and if you are interested in the original dataset and some other interesting datasets, find out more at: <https://data.humdata.org/dataset/iom-bangladesh-needs-and-population-monitoring-npm-drone-imagery-and-gis-package-by-camp-august-2018>
 
 ## Loading the Data and Creating New Features
 

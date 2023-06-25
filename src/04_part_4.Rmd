@@ -37,14 +37,26 @@ Referencing the primary key of one table from another table, ensuring referentia
 
 ::: code-box
 ``` sql
--- Add foreign key to Dwellings table for Occupancy Status 
-ALTER TABLE dwellings ADD COLUMN occupancy_status_id INTEGER REFERENCES dwellings_occupancy_status(id); 
+-- Add foreign key constraint to Dwellings table
+ALTER TABLE dwellings
+ADD COLUMN occupancy_status_id INTEGER,
+ADD CONSTRAINT fk_dwellings_occupancy_status
+  FOREIGN KEY (occupancy_status_id)
+  REFERENCES dwellings_occupancy_status (id);
 
--- Add foreign key to Water Distribution Points table for Operational Status 
-ALTER TABLE water_distribution_points ADD COLUMN operational_status_id INTEGER REFERENCES water_distribution_operational_status(id); 
+-- Add foreign key constraint to Water Distribution Points table
+ALTER TABLE water_distribution_points
+ADD COLUMN operational_status_id INTEGER,
+ADD CONSTRAINT fk_water_distribution_operational_status
+  FOREIGN KEY (operational_status_id)
+  REFERENCES water_distribution_operational_status (id);
 
--- Add foreign key to Educational Facilities table for Facility Type 
-ALTER TABLE educational_facilities ADD COLUMN facility_type_id INTEGER REFERENCES educational_facilities_facility_type(id);
+-- Add foreign key constraint to Educational Facilities table
+ALTER TABLE educational_facilities
+ADD COLUMN facility_type_id INTEGER,
+ADD CONSTRAINT fk_educational_facilities_facility_type
+  FOREIGN KEY (facility_type_id)
+  REFERENCES educational_facilities_facility_type (id);
 ```
 :::
 

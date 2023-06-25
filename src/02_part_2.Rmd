@@ -6,17 +6,19 @@ In this exercise we will focus on designing and creating the initial database sc
 
 Now you will delve into the crucial process of analyzing requirements and designing the data schema. You were requested to generate data for the dwellings, water distribution points, and educational facilities within the refugee camp.
 
-To begin, it is vital to address the following key question: "What specific information needs to be captured for each dwelling, water distribution point, and educational facility within the refugee camp?" By identifying the precise data points required for each entity, we can ensure that the database comprehensively represents the attributes and characteristics of these essential camp components.
+To begin, it is vital to address the following key question: "What specific information needs to be captured for each dwelling, water distribution point, and educational facility within the refugee camp?" By identifying the different aspects to the information you're interested in collecting, we can ensure that the database comprehensively represents the attributes and characteristics of these essential camp components.
 
 First, you need to acquire information as follows:
 
 | **Table**                 | **Table Name**            | **Attribute Information**    | **Geometry Type** |
-|---------------------------|---------------------------|------------------------------|-------------------|
+|------------------|------------------|-------------------|------------------|
 | Dwellings                 | dwellings                 | capacity, occupancy_status   | Polygon           |
 | Water Distribution Points | water_distribution_points | capacity, operational_status | Point             |
 | Educational Facilities    | educational_facilities    | facility_type, capacity      | Point             |
 
 ## Creating the Necessary Tables
+
+Then, it's time to create the tables with the following SQL that generates three tables and 3 to 4 columns with their correesponding data types:
 
 ::: code-box
 ``` sql

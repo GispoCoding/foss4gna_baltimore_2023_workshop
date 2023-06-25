@@ -1,0 +1,60 @@
+# Exercise 6: Advanced Topis
+
+## Creating Triggers for Data Entry Automation
+
+Try to create a Trigger in the database for making the data entries a more seamless process and exploring a bit the possibilities you have.
+
+To create a trigger that calculates the area of a polygon every time it is created, you can follow these steps:
+
+Alter the table "dwellings" to add the "area" column:
+
+::: code-box
+``` sql
+ALTER TABLE dwellings ADD COLUMN area DOUBLE PRECISION; 
+```
+:::
+
+Create the trigger function that calculates the area: :::
+
+::: code-box
+``` sql
+CREATE OR REPLACE FUNCTION calculate_area() RETURNS TRIGGER AS $$
+  BEGIN
+    NEW.area := ST_Area(NEW.geom);
+    RETURN NEW;
+  END;
+  $$ LANGUAGE plpgsql; 
+```
+:::
+
+Create the trigger on the "dwellings" table that calls the trigger function:
+
+::: code-box
+``` sql
+CREATE TRIGGER calculate_area_trigger BEFORE INSERT OR UPDATE ON dwellings FOR EACH ROW EXECUTE FUNCTION calculate_area(); 
+```
+:::
+
+Now, try to create some new features for the dwellings-table in QGIS. First you need to bring the table again to QGIS. every time a new polygon is inserted or updated in the "dwellings" table (ie. saved in QGIS), the trigger function "calculate_area" will be executed, and the area of the polygon will be automatically calculated and stored in the "area" column of the table.
+
+## Creating some sample data
+
+We can create some sample data for you to imagine how your database-powered data management process could go for the long-term:
+
+::: code-box
+``` sql
+INSERT INTO water_distribution_points (capacity, operational_status_id, geom)
+SELECT
+    floor(random() * 1000) AS capacity,
+    floor(random() * 2 + 1) AS operational_status_id,
+    ST_SetSRID(ST_MakePoint(
+        (random() * (412810.70 - 411685.52) + 411685.52)::numeric(10, 2),
+        (random() * (2344064.41 - 2342832.60) + 2342832.60)::numeric(10, 2)
+    ), 32646) AS geom
+FROM generate_series(1, 1000);
+```
+:::
+
+As a result, you should many points in the map:
+
+![](img/p1/sample_data.png)
