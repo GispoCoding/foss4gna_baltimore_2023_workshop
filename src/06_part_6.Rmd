@@ -1,4 +1,6 @@
-# Exercise 6: Advanced Topis
+# Exercise 6: Advanced Topics
+
+PostgreSQL/PostGIS database environment gives you some powerful capabilities that you should get familiarized step by step.For example triggers can be a valuable asset in enhancing your enterprise GIS environment.
 
 ## Creating Triggers for Data Entry Automation
 
