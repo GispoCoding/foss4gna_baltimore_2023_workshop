@@ -7,7 +7,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="8 Exercise 6: Automating Data Entry with Triggers and Getting Insights from the Database | Building an Enterprise GIS Workflow with QGIS and PostGIS" />
+<meta property="og:title" content="8 Exercise 6: Advanced Topis | Building an Enterprise GIS Workflow with QGIS and PostGIS" />
 <meta property="og:type" content="book" />
 
 
@@ -16,12 +16,12 @@
 
 <meta name="author" content="Gispo Ltd." />
 
-<meta name="date" content="2023-06-22" />
+<meta name="date" content="2023-06-25" />
 
 
-<meta name="description" content="8 Exercise 6: Automating Data Entry with Triggers and Getting Insights from the Database | Building an Enterprise GIS Workflow with QGIS and PostGIS">
+<meta name="description" content="8 Exercise 6: Advanced Topis | Building an Enterprise GIS Workflow with QGIS and PostGIS">
 
-<title>8 Exercise 6: Automating Data Entry with Triggers and Getting Insights from the Database | Building an Enterprise GIS Workflow with QGIS and PostGIS</title>
+<title>8 Exercise 6: Advanced Topis | Building an Enterprise GIS Workflow with QGIS and PostGIS</title>
 
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
@@ -140,6 +140,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><a href="01_part_1.html#installation-and-configuration-qgis"><span class="toc-section-number">3.0.1</span> Installation and Configuration: QGIS</a></li>
 <li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">3.0.2</span> Installation and Configuration: PostgreSQL</a></li>
 <li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">3.0.3</span> Integrating the Database with QGIS</a></li>
+<li><a href="01_part_1.html#creating-the-database-specifically-for-the-refuge-camp"><span class="toc-section-number">3.0.4</span> Creating the Database specifically for the Refuge Camp</a></li>
 </ul></li>
 <li><a href="02_part_2.html#exercise-2-data-structure-design-and-creation"><span class="toc-section-number">4</span> Exercise 2 Data Structure Design and Creation</a>
 <ul>
@@ -169,12 +170,10 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><a href="05_part_5.html#enabling-and-configuring-form-widgets"><span class="toc-section-number">7.3</span> Enabling and Configuring Form Widgets</a></li>
 <li><a href="05_part_5.html#going-beyond-the-basics"><span class="toc-section-number">7.4</span> Going beyond the basics</a></li>
 </ul></li>
-<li><a href="06_part_6.html#exercise-6-automating-data-entry-with-triggers-and-getting-insights-from-the-database"><span class="toc-section-number">8</span> Exercise 6: Automating Data Entry with Triggers and Getting Insights from the Database</a>
+<li><a href="06_part_6.html#exercise-6-advanced-topis"><span class="toc-section-number">8</span> Exercise 6: Advanced Topis</a>
 <ul>
 <li><a href="06_part_6.html#creating-triggers-for-data-entry-automation"><span class="toc-section-number">8.1</span> Creating Triggers for Data Entry Automation</a></li>
-<li><a href="06_part_6.html#configuring-triggers"><span class="toc-section-number">8.2</span> Configuring Triggers</a></li>
-<li><a href="06_part_6.html#testing-triggers"><span class="toc-section-number">8.3</span> Testing Triggers</a></li>
-<li><a href="06_part_6.html#performing-spatial-queries-and-analysis"><span class="toc-section-number">8.4</span> Performing Spatial Queries and Analysis</a></li>
+<li><a href="06_part_6.html#creating-some-sample-data"><span class="toc-section-number">8.2</span> Creating some sample data</a></li>
 </ul></li>
 </ul>
 </div>
@@ -185,19 +184,47 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="exercise-6-automating-data-entry-with-triggers-and-getting-insights-from-the-database" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Exercise 6: Automating Data Entry with Triggers and Getting Insights from the Database</h1>
+<div id="exercise-6-advanced-topis" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Exercise 6: Advanced Topis</h1>
 <div id="creating-triggers-for-data-entry-automation" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Creating Triggers for Data Entry Automation</h2>
+<p>Try to create a Trigger in the database for making the data entries a more seamless process and exploring a bit the possibilities you have.</p>
+<p>To create a trigger that calculates the area of a polygon every time it is created, you can follow these steps:</p>
+<p>Alter the table “dwellings” to add the “area” column:</p>
+<div class="code-box">
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb8-1"><a href="06_part_6.html#cb8-1" aria-hidden="true"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> dwellings <span class="kw">ADD</span> <span class="kw">COLUMN</span> area <span class="dt">DOUBLE</span> <span class="dt">PRECISION</span>; </span></code></pre></div>
 </div>
-<div id="configuring-triggers" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Configuring Triggers</h2>
+<p>Create the trigger function that calculates the area: :::</p>
+<div class="code-box">
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb9-1"><a href="06_part_6.html#cb9-1" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">OR</span> <span class="kw">REPLACE</span> <span class="kw">FUNCTION</span> calculate_area() RETURNS <span class="kw">TRIGGER</span> <span class="kw">AS</span> $$</span>
+<span id="cb9-2"><a href="06_part_6.html#cb9-2" aria-hidden="true"></a>  <span class="cf">BEGIN</span></span>
+<span id="cb9-3"><a href="06_part_6.html#cb9-3" aria-hidden="true"></a>    <span class="kw">NEW</span>.area <span class="op">:=</span> ST_Area(<span class="kw">NEW</span>.geom);</span>
+<span id="cb9-4"><a href="06_part_6.html#cb9-4" aria-hidden="true"></a>    <span class="kw">RETURN</span> <span class="kw">NEW</span>;</span>
+<span id="cb9-5"><a href="06_part_6.html#cb9-5" aria-hidden="true"></a>  <span class="cf">END</span>;</span>
+<span id="cb9-6"><a href="06_part_6.html#cb9-6" aria-hidden="true"></a>  $$ LANGUAGE plpgsql; </span></code></pre></div>
 </div>
-<div id="testing-triggers" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Testing Triggers</h2>
+<p>Create the trigger on the “dwellings” table that calls the trigger function:</p>
+<div class="code-box">
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="06_part_6.html#cb10-1" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TRIGGER</span> calculate_area_trigger <span class="kw">BEFORE</span> <span class="kw">INSERT</span> <span class="kw">OR</span> <span class="kw">UPDATE</span> <span class="kw">ON</span> dwellings <span class="cf">FOR</span> <span class="kw">EACH</span> <span class="kw">ROW</span> <span class="kw">EXECUTE</span> <span class="kw">FUNCTION</span> calculate_area(); </span></code></pre></div>
 </div>
-<div id="performing-spatial-queries-and-analysis" class="section level2" number="8.4">
-<h2><span class="header-section-number">8.4</span> Performing Spatial Queries and Analysis</h2>
+<p>Now, try to create some new features for the dwellings-table in QGIS. First you need to bring the table again to QGIS. every time a new polygon is inserted or updated in the “dwellings” table (ie. saved in QGIS), the trigger function “calculate_area” will be executed, and the area of the polygon will be automatically calculated and stored in the “area” column of the table.</p>
+</div>
+<div id="creating-some-sample-data" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Creating some sample data</h2>
+<p>We can create some sample data for you to imagine how your database-powered data management process could go for the long-term:</p>
+<div class="code-box">
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb11-1"><a href="06_part_6.html#cb11-1" aria-hidden="true"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> water_distribution_points (capacity, operational_status_id, geom)</span>
+<span id="cb11-2"><a href="06_part_6.html#cb11-2" aria-hidden="true"></a><span class="kw">SELECT</span></span>
+<span id="cb11-3"><a href="06_part_6.html#cb11-3" aria-hidden="true"></a>    <span class="fu">floor</span>(<span class="kw">random</span>() <span class="op">*</span> <span class="dv">1000</span>) <span class="kw">AS</span> capacity,</span>
+<span id="cb11-4"><a href="06_part_6.html#cb11-4" aria-hidden="true"></a>    <span class="fu">floor</span>(<span class="kw">random</span>() <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span>) <span class="kw">AS</span> operational_status_id,</span>
+<span id="cb11-5"><a href="06_part_6.html#cb11-5" aria-hidden="true"></a>    ST_SetSRID(ST_MakePoint(</span>
+<span id="cb11-6"><a href="06_part_6.html#cb11-6" aria-hidden="true"></a>        (<span class="kw">random</span>() <span class="op">*</span> (<span class="fl">412810.70</span> <span class="op">-</span> <span class="fl">411685.52</span>) <span class="op">+</span> <span class="fl">411685.52</span>):<span class="ch">:numeric</span>(<span class="dv">10</span>, <span class="dv">2</span>),</span>
+<span id="cb11-7"><a href="06_part_6.html#cb11-7" aria-hidden="true"></a>        (<span class="kw">random</span>() <span class="op">*</span> (<span class="fl">2344064.41</span> <span class="op">-</span> <span class="fl">2342832.60</span>) <span class="op">+</span> <span class="fl">2342832.60</span>):<span class="ch">:numeric</span>(<span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb11-8"><a href="06_part_6.html#cb11-8" aria-hidden="true"></a>    ), <span class="dv">32646</span>) <span class="kw">AS</span> geom</span>
+<span id="cb11-9"><a href="06_part_6.html#cb11-9" aria-hidden="true"></a><span class="kw">FROM</span> generate_series(<span class="dv">1</span>, <span class="dv">1000</span>);</span></code></pre></div>
+</div>
+<p>As a result, you should many points in the map:</p>
+<p><img src="img/p1/sample_data.png" /></p>
 
 </div>
 </div>
@@ -213,7 +240,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Building an Enterprise GIS Workflow with QGIS and PostGIS</h5>
-<span class="footer-version">v2023-06-22</span>
+<span class="footer-version">v2023-06-25</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 

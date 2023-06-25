@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Ltd." />
 
-<meta name="date" content="2023-06-22" />
+<meta name="date" content="2023-06-25" />
 
 
 <meta name="description" content="4 Exercise 2 Data Structure Design and Creation | Building an Enterprise GIS Workflow with QGIS and PostGIS">
@@ -140,6 +140,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><a href="01_part_1.html#installation-and-configuration-qgis"><span class="toc-section-number">3.0.1</span> Installation and Configuration: QGIS</a></li>
 <li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">3.0.2</span> Installation and Configuration: PostgreSQL</a></li>
 <li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">3.0.3</span> Integrating the Database with QGIS</a></li>
+<li><a href="01_part_1.html#creating-the-database-specifically-for-the-refuge-camp"><span class="toc-section-number">3.0.4</span> Creating the Database specifically for the Refuge Camp</a></li>
 </ul></li>
 <li><a href="02_part_2.html#exercise-2-data-structure-design-and-creation"><span class="toc-section-number">4</span> Exercise 2 Data Structure Design and Creation</a>
 <ul>
@@ -169,12 +170,10 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><a href="05_part_5.html#enabling-and-configuring-form-widgets"><span class="toc-section-number">7.3</span> Enabling and Configuring Form Widgets</a></li>
 <li><a href="05_part_5.html#going-beyond-the-basics"><span class="toc-section-number">7.4</span> Going beyond the basics</a></li>
 </ul></li>
-<li><a href="06_part_6.html#exercise-6-automating-data-entry-with-triggers-and-getting-insights-from-the-database"><span class="toc-section-number">8</span> Exercise 6: Automating Data Entry with Triggers and Getting Insights from the Database</a>
+<li><a href="06_part_6.html#exercise-6-advanced-topis"><span class="toc-section-number">8</span> Exercise 6: Advanced Topis</a>
 <ul>
 <li><a href="06_part_6.html#creating-triggers-for-data-entry-automation"><span class="toc-section-number">8.1</span> Creating Triggers for Data Entry Automation</a></li>
-<li><a href="06_part_6.html#configuring-triggers"><span class="toc-section-number">8.2</span> Configuring Triggers</a></li>
-<li><a href="06_part_6.html#testing-triggers"><span class="toc-section-number">8.3</span> Testing Triggers</a></li>
-<li><a href="06_part_6.html#performing-spatial-queries-and-analysis"><span class="toc-section-number">8.4</span> Performing Spatial Queries and Analysis</a></li>
+<li><a href="06_part_6.html#creating-some-sample-data"><span class="toc-section-number">8.2</span> Creating some sample data</a></li>
 </ul></li>
 </ul>
 </div>
@@ -191,14 +190,14 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <div id="analyzing-requirements-and-designing-the-data-schema" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Analyzing Requirements and Designing the Data Schema</h2>
 <p>Now you will delve into the crucial process of analyzing requirements and designing the data schema. You were requested to generate data for the dwellings, water distribution points, and educational facilities within the refugee camp.</p>
-<p>To begin, it is vital to address the following key question: “What specific information needs to be captured for each dwelling, water distribution point, and educational facility within the refugee camp?” By identifying the precise data points required for each entity, we can ensure that the database comprehensively represents the attributes and characteristics of these essential camp components.</p>
+<p>To begin, it is vital to address the following key question: “What specific information needs to be captured for each dwelling, water distribution point, and educational facility within the refugee camp?” By identifying the different aspects to the information you’re interested in collecting, we can ensure that the database comprehensively represents the attributes and characteristics of these essential camp components.</p>
 <p>First, you need to acquire information as follows:</p>
-<table>
+<table style="width:100%;">
 <colgroup>
+<col width="24%" />
+<col width="24%" />
 <col width="26%" />
-<col width="26%" />
-<col width="29%" />
-<col width="18%" />
+<col width="24%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -232,6 +231,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <div id="creating-the-necessary-tables" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Creating the Necessary Tables</h2>
+<p>Then, it’s time to create the tables with the following SQL that generates three tables and 3 to 4 columns with their correesponding data types:</p>
 <div class="code-box">
 <div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb4-1"><a href="02_part_2.html#cb4-1" aria-hidden="true"></a><span class="co">-- Creating the Dwellings table</span></span>
 <span id="cb4-2"><a href="02_part_2.html#cb4-2" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> dwellings (</span>
@@ -274,7 +274,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Building an Enterprise GIS Workflow with QGIS and PostGIS</h5>
-<span class="footer-version">v2023-06-22</span>
+<span class="footer-version">v2023-06-25</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 

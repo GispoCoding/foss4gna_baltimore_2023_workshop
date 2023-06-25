@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Ltd." />
 
-<meta name="date" content="2023-06-22" />
+<meta name="date" content="2023-06-25" />
 
 
 <meta name="description" content="3 Exercise 1: Database Creation and Integration | Building an Enterprise GIS Workflow with QGIS and PostGIS">
@@ -140,6 +140,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><a href="01_part_1.html#installation-and-configuration-qgis"><span class="toc-section-number">3.0.1</span> Installation and Configuration: QGIS</a></li>
 <li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">3.0.2</span> Installation and Configuration: PostgreSQL</a></li>
 <li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">3.0.3</span> Integrating the Database with QGIS</a></li>
+<li><a href="01_part_1.html#creating-the-database-specifically-for-the-refuge-camp"><span class="toc-section-number">3.0.4</span> Creating the Database specifically for the Refuge Camp</a></li>
 </ul></li>
 <li><a href="02_part_2.html#exercise-2-data-structure-design-and-creation"><span class="toc-section-number">4</span> Exercise 2 Data Structure Design and Creation</a>
 <ul>
@@ -169,12 +170,10 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><a href="05_part_5.html#enabling-and-configuring-form-widgets"><span class="toc-section-number">7.3</span> Enabling and Configuring Form Widgets</a></li>
 <li><a href="05_part_5.html#going-beyond-the-basics"><span class="toc-section-number">7.4</span> Going beyond the basics</a></li>
 </ul></li>
-<li><a href="06_part_6.html#exercise-6-automating-data-entry-with-triggers-and-getting-insights-from-the-database"><span class="toc-section-number">8</span> Exercise 6: Automating Data Entry with Triggers and Getting Insights from the Database</a>
+<li><a href="06_part_6.html#exercise-6-advanced-topis"><span class="toc-section-number">8</span> Exercise 6: Advanced Topis</a>
 <ul>
 <li><a href="06_part_6.html#creating-triggers-for-data-entry-automation"><span class="toc-section-number">8.1</span> Creating Triggers for Data Entry Automation</a></li>
-<li><a href="06_part_6.html#configuring-triggers"><span class="toc-section-number">8.2</span> Configuring Triggers</a></li>
-<li><a href="06_part_6.html#testing-triggers"><span class="toc-section-number">8.3</span> Testing Triggers</a></li>
-<li><a href="06_part_6.html#performing-spatial-queries-and-analysis"><span class="toc-section-number">8.4</span> Performing Spatial Queries and Analysis</a></li>
+<li><a href="06_part_6.html#creating-some-sample-data"><span class="toc-section-number">8.2</span> Creating some sample data</a></li>
 </ul></li>
 </ul>
 </div>
@@ -239,48 +238,61 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><p>During the installation, you will be prompted to configure the PostgreSQL installation. You can choose the default settings or customize them based on your preferences.</p></li>
 <li><p>Once the installation is complete, PostgreSQL will be ready to use on your localhost.</p></li>
 </ol>
-<p>By installing PostgreSQL on your local computer, you will have a dedicated database server to work with for your workshop. This will allow you to have full control over the database environment and perform all necessary tasks directly on your machine."</p>
+<p>By installing PostgreSQL on your local computer, you will have a dedicated database server to work with for your workshop. This will allow you to have full control over the database environment and perform all necessary tasks directly on your machine.</p>
 </div>
 <div id="managed-remote-database-aiven" class="section level4" number="3.0.2.2">
 <h4><span class="header-section-number">3.0.2.2</span> Managed remote database (Aiven)</h4>
 <p>You also have the option to utilize a managed remote database for your workshop. There are various cloud providers that offer managed PostgreSQL databases, and one such provider is Aiven. Aiven was specifically chosen for this workshop due to its user-friendly interface and their generous support towards open-source initiatives.</p>
-<p>If you decide to use Aiven for your workshop and would like to take advantage of free bonus credits for a more powerful PostgreSQL database, please provide your email address through the following Google Forms link. This will ensure you receive the bonus credits to enhance your database experience.</p>
+<p>If you decide to use Aiven for your workshop, use the coupon the trainer provides you for receiving the credits.</p>
 <p>To create and connect to a remote PostgreSQL database on Aiven, please follow the guidelines below:</p>
 <ol style="list-style-type: decimal">
 <li><p>Sign up for an account on the Aiven website (<a href="https://aiven.io/"><strong>https://aiven.io/</strong></a>) if you haven’t already.</p></li>
 <li><p>Log in to your Aiven account and navigate to the PostgreSQL service.</p></li>
 <li><p>Click on ‘Create Service’ to initiate the creation of a new PostgreSQL database.</p></li>
-<li><p>Select the desired specifications and configurations for your database, ensuring it meets your requirements.</p></li>
+<li><p>Select the desired specifications and configurations for your database, ensuring it meets your requirements.</p>
+<p>If you feel that you want to start with the Free-tier level PostgreSQL, you can just use the Free-tier and not use your credits at this time.</p>
+<p>´<img src="img/p1/create_aiven_pg.png" /></p></li>
 <li><p>Once the database is created, you will receive the necessary connection details such as host, port, username, and password.</p></li>
 <li><p>Use these connection details to establish a connection to your remote PostgreSQL database from your local environment or any desired client tool.</p></li>
 </ol>
-<p>By following these guidelines, you will be able to leverage the capabilities of a remote PostgreSQL database provided by Aiven, empowering you to work with a more robust and scalable infrastructure for your workshop.Creating a Spatial Database</p>
+<p>By following these guidelines, you will be able to leverage the capabilities of a remote PostgreSQL database provided by Aiven, empowering you to work with a more robust and scalable infrastructure for your workshop.</p>
 </div>
-<div id="creating-the-database" class="section level4" number="3.0.2.3">
-<h4><span class="header-section-number">3.0.2.3</span> Creating the database</h4>
-<div class="code-box">
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="01_part_1.html#cb2-1" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">DATABASE</span> camp_facilities_db;</span></code></pre></div>
-</div>
-<div class="code-box">
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="01_part_1.html#cb3-1" aria-hidden="true"></a><span class="kw">CREATE</span> EXTENSION postgis;</span></code></pre></div>
-</div>
+<div id="connecting-to-the-database-with-a-database-client" class="section level4" number="3.0.2.3">
+<h4><span class="header-section-number">3.0.2.3</span> Connecting to the database with a database client</h4>
+<p>QGIS can work as your database client. If you have another PostgreSQL client of preference (e.g. pgAdmin, Dbeaver), you can also use that one.</p>
 </div>
 </div>
 <div id="integrating-the-database-with-qgis" class="section level3" number="3.0.3">
 <h3><span class="header-section-number">3.0.3</span> Integrating the Database with QGIS</h3>
 <ol style="list-style-type: decimal">
-<li><p>In QGIS, go to the “Browser” panel and expand the “PostGIS” node.</p></li>
-<li><p>Right-click on “PostGIS” and select “New Connection” to open the “Add PostGIS Layers” dialog.</p></li>
-<li><p>Enter the necessary connection details, including the database name, host, port, username, and password.</p></li>
+<li><p>In QGIS, go to the “Browser” panel and expand the “PostgreSQL” node.</p></li>
+<li><p>Right-click on “PostgreSQL” and select “New Connection” to open the “Create a New PostGIS Connection” dialog.</p></li>
+<li><p>Enter the necessary connection details, including the database name, host, port, username, and password. Mark also “Also list tables with no geometry” as well.</p></li>
 <li><p>Click “Test Connection” to verify the connection and ensure it is successful.</p></li>
-<li><p>Once the connection is verified, click “OK” to close the dialog and establish the connection.</p></li>
-<li><p>The database should now appear under the “PostGIS” node in the “Browser” panel.</p></li>
+<li><p>Once the connection is verified, click “OK” to close the dialog and establish the connection.</p>
+<p>Using a localhost setup for the workshop, the database connection details would look for example as follows:</p>
+<p><img src="img/p1/add_postgres.png" /></p></li>
+<li><p>The database should now appear under the “PostgreSQL” node in the “Browser” panel.</p></li>
 </ol>
-<div class="figure">
-<img src="img/p1/p_01_i_02.png" alt="" />
-<p class="caption">Now you can see connection and explore the database:</p>
-</div>
 <p><img src="img/p1/03.png" /></p>
+</div>
+<div id="creating-the-database-specifically-for-the-refuge-camp" class="section level3" number="3.0.4">
+<h3><span class="header-section-number">3.0.4</span> Creating the Database specifically for the Refuge Camp</h3>
+<p>Besides the default database PostgreSQL creates called “postgres”, we need to create another database dedicated to our Refuge camp project.</p>
+<p>You can execute / run SQL in QGIS in various manners, one is right-clicking the database connection you just created and choosing execute SQL.</p>
+<p><img src="img/p1/exec_sql.png" /></p>
+<p>Copy and paste the following SQL for creating the database:</p>
+<div class="code-box">
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="01_part_1.html#cb2-1" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">DATABASE</span> camp_facilities_db;</span></code></pre></div>
+</div>
+<p><img src="img/p1/create_db.png" /></p>
+<p>Then, edit the db-connection you already made, and change the name of the database to camp_facilities_db:</p>
+<p><img src="img/p1/change_db_info.png" /></p>
+<p>And then we need to enable the PostGIS spatial extension, by executing the following SQL (as before):</p>
+<div class="code-box">
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="01_part_1.html#cb3-1" aria-hidden="true"></a><span class="kw">CREATE</span> EXTENSION postgis;</span></code></pre></div>
+</div>
+<p>For the long-term, you can consider using a database management tool, such as pgAdmin4 or Dbeaver. You can also use psql which is a great command-line tool for connecting and managing your PostgreSQL databases. Remember that these tools are just different ways accessing to your database.</p>
 
 </div>
 </div>
@@ -297,7 +309,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Building an Enterprise GIS Workflow with QGIS and PostGIS</h5>
-<span class="footer-version">v2023-06-22</span>
+<span class="footer-version">v2023-06-25</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 

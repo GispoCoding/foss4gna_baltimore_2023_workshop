@@ -8,8 +8,9 @@ installation-and-configuration-qgis
 installation-and-configuration-postgresql
 deploying-postgresql-on-localhost
 managed-remote-database-aiven
-creating-the-database
+connecting-to-the-database-with-a-database-client
 integrating-the-database-with-qgis
+creating-the-database-specifically-for-the-refuge-camp
 exercise-2-data-structure-design-and-creation
 analyzing-requirements-and-designing-the-data-schema
 creating-the-necessary-tables
@@ -30,8 +31,6 @@ designing-a-data-entry-form
 discovering-table-relations-in-qgis-before-setting-up-the-forms
 enabling-and-configuring-form-widgets
 going-beyond-the-basics
-exercise-6-automating-data-entry-with-triggers-and-getting-insights-from-the-database
+exercise-6-advanced-topis
 creating-triggers-for-data-entry-automation
-configuring-triggers
-testing-triggers
-performing-spatial-queries-and-analysis
+creating-some-sample-data
