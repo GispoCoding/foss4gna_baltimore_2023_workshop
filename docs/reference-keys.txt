@@ -1,4 +1,5 @@
-welcome
+introduction
+workshop-objectives
 reading-instructions
 software-in-question-and-further-information
 errors

@@ -7,7 +7,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="3 Exercise 1: Database Creation and Integration | Building an Enterprise GIS Workflow with QGIS and PostGIS" />
+<meta property="og:title" content="4 Exercise 1: Database Creation and Integration | Building an Enterprise GIS Workflow with QGIS and PostGIS" />
 <meta property="og:type" content="book" />
 
 
@@ -16,12 +16,12 @@
 
 <meta name="author" content="Gispo Ltd." />
 
-<meta name="date" content="2023-06-25" />
+<meta name="date" content="2023-07-04" />
 
 
-<meta name="description" content="3 Exercise 1: Database Creation and Integration | Building an Enterprise GIS Workflow with QGIS and PostGIS">
+<meta name="description" content="4 Exercise 1: Database Creation and Integration | Building an Enterprise GIS Workflow with QGIS and PostGIS">
 
-<title>3 Exercise 1: Database Creation and Integration | Building an Enterprise GIS Workflow with QGIS and PostGIS</title>
+<title>4 Exercise 1: Database Creation and Integration | Building an Enterprise GIS Workflow with QGIS and PostGIS</title>
 
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
@@ -128,52 +128,53 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <nav class="sidebar-nav">
 <div id="TOC" class="toc">
 <ul>
-<li><a href="index.html#welcome"><span class="toc-section-number">1</span> Welcome!</a></li>
-<li><a href="index.html#reading-instructions"><span class="toc-section-number">2</span> Reading instructions</a>
+<li><a href="index.html#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="index.html#workshop-objectives"><span class="toc-section-number">2</span> Workshop Objectives:</a></li>
+<li><a href="index.html#reading-instructions"><span class="toc-section-number">3</span> Reading instructions</a>
 <ul>
-<li><a href="index.html#software-in-question-and-further-information"><span class="toc-section-number">2.1</span> Software in question and further information</a></li>
-<li><a href="index.html#errors"><span class="toc-section-number">2.2</span> Errors</a></li>
-<li><a href="index.html#license-and-user-rights"><span class="toc-section-number">2.3</span> License and user rights</a></li>
+<li><a href="index.html#software-in-question-and-further-information"><span class="toc-section-number">3.1</span> Software in question and further information</a></li>
+<li><a href="index.html#errors"><span class="toc-section-number">3.2</span> Errors</a></li>
+<li><a href="index.html#license-and-user-rights"><span class="toc-section-number">3.3</span> License and user rights</a></li>
 </ul></li>
-<li><a href="01_part_1.html#exercise-1-database-creation-and-integration"><span class="toc-section-number">3</span> Exercise 1: Database Creation and Integration</a>
+<li><a href="01_part_1.html#exercise-1-database-creation-and-integration"><span class="toc-section-number">4</span> Exercise 1: Database Creation and Integration</a>
 <ul>
-<li><a href="01_part_1.html#installation-and-configuration-qgis"><span class="toc-section-number">3.0.1</span> Installation and Configuration: QGIS</a></li>
-<li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">3.0.2</span> Installation and Configuration: PostgreSQL</a></li>
-<li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">3.0.3</span> Integrating the Database with QGIS</a></li>
-<li><a href="01_part_1.html#creating-the-database-specifically-for-the-refuge-camp"><span class="toc-section-number">3.0.4</span> Creating the Database specifically for the Refuge Camp</a></li>
+<li><a href="01_part_1.html#installation-and-configuration-qgis"><span class="toc-section-number">4.0.1</span> Installation and Configuration: QGIS</a></li>
+<li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">4.0.2</span> Installation and Configuration: PostgreSQL</a></li>
+<li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">4.0.3</span> Integrating the Database with QGIS</a></li>
+<li><a href="01_part_1.html#creating-the-database-specifically-for-the-refuge-camp"><span class="toc-section-number">4.0.4</span> Creating the Database specifically for the Refuge Camp</a></li>
 </ul></li>
-<li><a href="02_part_2.html#exercise-2-data-structure-design-and-creation"><span class="toc-section-number">4</span> Exercise 2 Data Structure Design and Creation</a>
+<li><a href="02_part_2.html#exercise-2-data-structure-design-and-creation"><span class="toc-section-number">5</span> Exercise 2 Data Structure Design and Creation</a>
 <ul>
-<li><a href="02_part_2.html#analyzing-requirements-and-designing-the-data-schema"><span class="toc-section-number">4.1</span> Analyzing Requirements and Designing the Data Schema</a></li>
-<li><a href="02_part_2.html#creating-the-necessary-tables"><span class="toc-section-number">4.2</span> Creating the Necessary Tables</a></li>
+<li><a href="02_part_2.html#analyzing-requirements-and-designing-the-data-schema"><span class="toc-section-number">5.1</span> Analyzing Requirements and Designing the Data Schema</a></li>
+<li><a href="02_part_2.html#creating-the-necessary-tables"><span class="toc-section-number">5.2</span> Creating the Necessary Tables</a></li>
 </ul></li>
-<li><a href="03_part_3.html#exercise-3-creating-and-editing-data-in-qgis"><span class="toc-section-number">5</span> Exercise 3: Creating and Editing Data in QGIS</a>
+<li><a href="03_part_3.html#exercise-3-creating-and-editing-data-in-qgis"><span class="toc-section-number">6</span> Exercise 3: Creating and Editing Data in QGIS</a>
 <ul>
-<li><a href="03_part_3.html#loading-some-aerial-imagery-for-context-in-qgis"><span class="toc-section-number">5.1</span> Loading some aerial imagery for context in QGIS</a></li>
-<li><a href="03_part_3.html#loading-the-data-and-creating-new-features"><span class="toc-section-number">5.2</span> Loading the Data and Creating New Features</a></li>
-<li><a href="03_part_3.html#editing-existing-features"><span class="toc-section-number">5.3</span> Editing Existing Features</a></li>
-<li><a href="03_part_3.html#deleting-unnecessary-features"><span class="toc-section-number">5.4</span> Deleting Unnecessary Features</a></li>
+<li><a href="03_part_3.html#loading-some-aerial-imagery-for-context-in-qgis"><span class="toc-section-number">6.1</span> Loading some aerial imagery for context in QGIS</a></li>
+<li><a href="03_part_3.html#loading-the-data-and-creating-new-features"><span class="toc-section-number">6.2</span> Loading the Data and Creating New Features</a></li>
+<li><a href="03_part_3.html#editing-existing-features"><span class="toc-section-number">6.3</span> Editing Existing Features</a></li>
+<li><a href="03_part_3.html#deleting-unnecessary-features"><span class="toc-section-number">6.4</span> Deleting Unnecessary Features</a></li>
 </ul></li>
-<li><a href="04_part_4.html#exercise-4-creating-lookup-tables-and-utilizing-lookup-values"><span class="toc-section-number">6</span> Exercise 4: Creating Lookup Tables and Utilizing Lookup Values</a>
+<li><a href="04_part_4.html#exercise-4-creating-lookup-tables-and-utilizing-lookup-values"><span class="toc-section-number">7</span> Exercise 4: Creating Lookup Tables and Utilizing Lookup Values</a>
 <ul>
-<li><a href="04_part_4.html#identifying-attributes-requiring-predefined-values"><span class="toc-section-number">6.1</span> Identifying Attributes Requiring Predefined Values</a></li>
-<li><a href="04_part_4.html#creating-an-enumeration-table"><span class="toc-section-number">6.2</span> Creating an Enumeration Table</a></li>
-<li><a href="04_part_4.html#establishing-relationships-with-the-main-data-table"><span class="toc-section-number">6.3</span> Establishing Relationships with the Main Data Table</a></li>
-<li><a href="04_part_4.html#populating-the-enumeration-table"><span class="toc-section-number">6.4</span> Populating the Enumeration Table</a></li>
-<li><a href="04_part_4.html#using-the-enumeration-table-in-qgis"><span class="toc-section-number">6.5</span> Using the Enumeration Table in QGIS</a></li>
-<li><a href="04_part_4.html#visualizing-the-relations-between-the-database-tables"><span class="toc-section-number">6.6</span> Visualizing the relations between the database tables</a></li>
+<li><a href="04_part_4.html#identifying-attributes-requiring-predefined-values"><span class="toc-section-number">7.1</span> Identifying Attributes Requiring Predefined Values</a></li>
+<li><a href="04_part_4.html#creating-an-enumeration-table"><span class="toc-section-number">7.2</span> Creating an Enumeration Table</a></li>
+<li><a href="04_part_4.html#establishing-relationships-with-the-main-data-table"><span class="toc-section-number">7.3</span> Establishing Relationships with the Main Data Table</a></li>
+<li><a href="04_part_4.html#populating-the-enumeration-table"><span class="toc-section-number">7.4</span> Populating the Enumeration Table</a></li>
+<li><a href="04_part_4.html#using-the-enumeration-table-in-qgis"><span class="toc-section-number">7.5</span> Using the Enumeration Table in QGIS</a></li>
+<li><a href="04_part_4.html#visualizing-the-relations-between-the-database-tables"><span class="toc-section-number">7.6</span> Visualizing the relations between the database tables</a></li>
 </ul></li>
-<li><a href="05_part_5.html#exercise-5-workflow-optimization-and-data-entry-forms"><span class="toc-section-number">7</span> Exercise 5: Workflow Optimization and Data Entry Forms</a>
+<li><a href="05_part_5.html#exercise-5-workflow-optimization-and-data-entry-forms"><span class="toc-section-number">8</span> Exercise 5: Workflow Optimization and Data Entry Forms</a>
 <ul>
-<li><a href="05_part_5.html#designing-a-data-entry-form"><span class="toc-section-number">7.1</span> Designing a Data Entry Form</a></li>
-<li><a href="05_part_5.html#discovering-table-relations-in-qgis-before-setting-up-the-forms"><span class="toc-section-number">7.2</span> Discovering table relations in QGIS before setting up the forms</a></li>
-<li><a href="05_part_5.html#enabling-and-configuring-form-widgets"><span class="toc-section-number">7.3</span> Enabling and Configuring Form Widgets</a></li>
-<li><a href="05_part_5.html#going-beyond-the-basics"><span class="toc-section-number">7.4</span> Going beyond the basics</a></li>
+<li><a href="05_part_5.html#designing-a-data-entry-form"><span class="toc-section-number">8.1</span> Designing a Data Entry Form</a></li>
+<li><a href="05_part_5.html#discovering-table-relations-in-qgis-before-setting-up-the-forms"><span class="toc-section-number">8.2</span> Discovering table relations in QGIS before setting up the forms</a></li>
+<li><a href="05_part_5.html#enabling-and-configuring-form-widgets"><span class="toc-section-number">8.3</span> Enabling and Configuring Form Widgets</a></li>
+<li><a href="05_part_5.html#going-beyond-the-basics"><span class="toc-section-number">8.4</span> Going beyond the basics</a></li>
 </ul></li>
-<li><a href="06_part_6.html#exercise-6-advanced-topics"><span class="toc-section-number">8</span> Exercise 6: Advanced Topics</a>
+<li><a href="06_part_6.html#exercise-6-advanced-topics"><span class="toc-section-number">9</span> Exercise 6: Advanced Topics</a>
 <ul>
-<li><a href="06_part_6.html#creating-triggers-for-data-entry-automation"><span class="toc-section-number">8.1</span> Creating Triggers for Data Entry Automation</a></li>
-<li><a href="06_part_6.html#creating-some-sample-data"><span class="toc-section-number">8.2</span> Creating some sample data</a></li>
+<li><a href="06_part_6.html#creating-triggers-for-data-entry-automation"><span class="toc-section-number">9.1</span> Creating Triggers for Data Entry Automation</a></li>
+<li><a href="06_part_6.html#creating-some-sample-data"><span class="toc-section-number">9.2</span> Creating some sample data</a></li>
 </ul></li>
 </ul>
 </div>
@@ -184,16 +185,16 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="exercise-1-database-creation-and-integration" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Exercise 1: Database Creation and Integration</h1>
+<div id="exercise-1-database-creation-and-integration" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Exercise 1: Database Creation and Integration</h1>
 <p>Imagine you are the Head of GIS or any other GIS representative in the Refuge Camp in Chattogram, Bangalesh, working for the International Organization for Migration (IOM).</p>
-<div id="installation-and-configuration-qgis" class="section level3" number="3.0.1">
-<h3><span class="header-section-number">3.0.1</span> Installation and Configuration: QGIS</h3>
+<div id="installation-and-configuration-qgis" class="section level3" number="4.0.1">
+<h3><span class="header-section-number">4.0.1</span> Installation and Configuration: QGIS</h3>
 <p>You will need QGIS for this workshop. If you already have QGIS instaled, great! It is recommended to use the latest Long-Term Release (LTR) version, which can be downloaded from the official QGIS website: <a href="https://www.qgis.org/en/site/forusers/download.html" class="uri">https://www.qgis.org/en/site/forusers/download.html</a>. Due to workshop schedule constraints and potential internet limitations, if you already have an earlier version of QGIS installed on your computer, you can use that version for the workshop.</p>
 <p>However, it is still recommended to have the latest Long-Term Release (LTR) version of QGIS to ensure compatibility and access to the most up-to-date features.</p>
 </div>
-<div id="installation-and-configuration-postgresql" class="section level3" number="3.0.2">
-<h3><span class="header-section-number">3.0.2</span> Installation and Configuration: PostgreSQL</h3>
+<div id="installation-and-configuration-postgresql" class="section level3" number="4.0.2">
+<h3><span class="header-section-number">4.0.2</span> Installation and Configuration: PostgreSQL</h3>
 <p>You have the flexibility to choose between two workshop setups: deploying a PostgreSQL database on your local computer or utilizing a remote cloud provider, such as Aiven, for your database needs.</p>
 <p>Use the following table to guide your choice of setup.</p>
 <table>
@@ -227,8 +228,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </tr>
 </tbody>
 </table>
-<div id="deploying-postgresql-on-localhost" class="section level4" number="3.0.2.1">
-<h4><span class="header-section-number">3.0.2.1</span> Deploying PostgreSQL on localhost</h4>
+<div id="deploying-postgresql-on-localhost" class="section level4" number="4.0.2.1">
+<h4><span class="header-section-number">4.0.2.1</span> Deploying PostgreSQL on localhost</h4>
 <p>You also have the option to install PostgreSQL on your localhost, regardless of your operating system. Installing PostgreSQL on your local computer is straightforward and can be done by following the guidelines provided on the official PostgreSQL website: <a href="https://www.postgresql.org/download/"><strong>https://www.postgresql.org/download/</strong></a>.</p>
 <p>To proceed with the installation, please ensure you are using PostgreSQL version 15. If you already have an earlier version of PostgreSQL installed on your system, you can continue using that version as well.</p>
 <p>Here are the steps to install PostgreSQL on your local computer:</p>
@@ -240,8 +241,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </ol>
 <p>By installing PostgreSQL on your local computer, you will have a dedicated database server to work with for your workshop. This will allow you to have full control over the database environment and perform all necessary tasks directly on your machine.</p>
 </div>
-<div id="managed-remote-database-aiven" class="section level4" number="3.0.2.2">
-<h4><span class="header-section-number">3.0.2.2</span> Managed remote database (Aiven)</h4>
+<div id="managed-remote-database-aiven" class="section level4" number="4.0.2.2">
+<h4><span class="header-section-number">4.0.2.2</span> Managed remote database (Aiven)</h4>
 <p>You also have the option to utilize a managed remote database for your workshop. There are various cloud providers that offer managed PostgreSQL databases, and one such provider is Aiven. Aiven was specifically chosen for this workshop due to its user-friendly interface and their generous support towards open-source initiatives.</p>
 <p>If you decide to use Aiven for your workshop, use the coupon the trainer provides you for receiving the credits.</p>
 <p>To create and connect to a remote PostgreSQL database on Aiven, please follow the guidelines below:</p>
@@ -257,13 +258,13 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </ol>
 <p>By following these guidelines, you will be able to leverage the capabilities of a remote PostgreSQL database provided by Aiven, empowering you to work with a more robust and scalable infrastructure for your workshop.</p>
 </div>
-<div id="connecting-to-the-database-with-a-database-client" class="section level4" number="3.0.2.3">
-<h4><span class="header-section-number">3.0.2.3</span> Connecting to the database with a database client</h4>
+<div id="connecting-to-the-database-with-a-database-client" class="section level4" number="4.0.2.3">
+<h4><span class="header-section-number">4.0.2.3</span> Connecting to the database with a database client</h4>
 <p>QGIS can work as your database client. If you have another PostgreSQL client of preference (e.g. pgAdmin, Dbeaver), you can also use that one.</p>
 </div>
 </div>
-<div id="integrating-the-database-with-qgis" class="section level3" number="3.0.3">
-<h3><span class="header-section-number">3.0.3</span> Integrating the Database with QGIS</h3>
+<div id="integrating-the-database-with-qgis" class="section level3" number="4.0.3">
+<h3><span class="header-section-number">4.0.3</span> Integrating the Database with QGIS</h3>
 <ol style="list-style-type: decimal">
 <li><p>In QGIS, go to the “Browser” panel and expand the “PostgreSQL” node.</p></li>
 <li><p>Right-click on “PostgreSQL” and select “New Connection” to open the “Create a New PostGIS Connection” dialog.</p></li>
@@ -276,8 +277,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </ol>
 <p><img src="img/p1/03.png" /></p>
 </div>
-<div id="creating-the-database-specifically-for-the-refuge-camp" class="section level3" number="3.0.4">
-<h3><span class="header-section-number">3.0.4</span> Creating the Database specifically for the Refuge Camp</h3>
+<div id="creating-the-database-specifically-for-the-refuge-camp" class="section level3" number="4.0.4">
+<h3><span class="header-section-number">4.0.4</span> Creating the Database specifically for the Refuge Camp</h3>
 <p>Besides the default database PostgreSQL creates called “postgres”, we need to create another database dedicated to our Refuge camp project.</p>
 <p>You can execute / run SQL in QGIS in various manners, one is right-clicking the database connection you just created and choosing execute SQL.</p>
 <p><img src="img/p1/exec_sql.png" /></p>
@@ -309,7 +310,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Building an Enterprise GIS Workflow with QGIS and PostGIS</h5>
-<span class="footer-version">v2023-06-25</span>
+<span class="footer-version">v2023-07-04</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 

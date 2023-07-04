@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Ltd." />
 
-<meta name="date" content="2023-06-25" />
+<meta name="date" content="2023-07-04" />
 
 
 <meta name="description" content="Building an Enterprise GIS Workflow with QGIS and PostGIS">
@@ -128,52 +128,53 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <nav class="sidebar-nav">
 <div id="TOC" class="toc">
 <ul>
-<li><a href="index.html#welcome"><span class="toc-section-number">1</span> Welcome!</a></li>
-<li><a href="index.html#reading-instructions"><span class="toc-section-number">2</span> Reading instructions</a>
+<li><a href="index.html#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="index.html#workshop-objectives"><span class="toc-section-number">2</span> Workshop Objectives:</a></li>
+<li><a href="index.html#reading-instructions"><span class="toc-section-number">3</span> Reading instructions</a>
 <ul>
-<li><a href="index.html#software-in-question-and-further-information"><span class="toc-section-number">2.1</span> Software in question and further information</a></li>
-<li><a href="index.html#errors"><span class="toc-section-number">2.2</span> Errors</a></li>
-<li><a href="index.html#license-and-user-rights"><span class="toc-section-number">2.3</span> License and user rights</a></li>
+<li><a href="index.html#software-in-question-and-further-information"><span class="toc-section-number">3.1</span> Software in question and further information</a></li>
+<li><a href="index.html#errors"><span class="toc-section-number">3.2</span> Errors</a></li>
+<li><a href="index.html#license-and-user-rights"><span class="toc-section-number">3.3</span> License and user rights</a></li>
 </ul></li>
-<li><a href="01_part_1.html#exercise-1-database-creation-and-integration"><span class="toc-section-number">3</span> Exercise 1: Database Creation and Integration</a>
+<li><a href="01_part_1.html#exercise-1-database-creation-and-integration"><span class="toc-section-number">4</span> Exercise 1: Database Creation and Integration</a>
 <ul>
-<li><a href="01_part_1.html#installation-and-configuration-qgis"><span class="toc-section-number">3.0.1</span> Installation and Configuration: QGIS</a></li>
-<li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">3.0.2</span> Installation and Configuration: PostgreSQL</a></li>
-<li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">3.0.3</span> Integrating the Database with QGIS</a></li>
-<li><a href="01_part_1.html#creating-the-database-specifically-for-the-refuge-camp"><span class="toc-section-number">3.0.4</span> Creating the Database specifically for the Refuge Camp</a></li>
+<li><a href="01_part_1.html#installation-and-configuration-qgis"><span class="toc-section-number">4.0.1</span> Installation and Configuration: QGIS</a></li>
+<li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">4.0.2</span> Installation and Configuration: PostgreSQL</a></li>
+<li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">4.0.3</span> Integrating the Database with QGIS</a></li>
+<li><a href="01_part_1.html#creating-the-database-specifically-for-the-refuge-camp"><span class="toc-section-number">4.0.4</span> Creating the Database specifically for the Refuge Camp</a></li>
 </ul></li>
-<li><a href="02_part_2.html#exercise-2-data-structure-design-and-creation"><span class="toc-section-number">4</span> Exercise 2 Data Structure Design and Creation</a>
+<li><a href="02_part_2.html#exercise-2-data-structure-design-and-creation"><span class="toc-section-number">5</span> Exercise 2 Data Structure Design and Creation</a>
 <ul>
-<li><a href="02_part_2.html#analyzing-requirements-and-designing-the-data-schema"><span class="toc-section-number">4.1</span> Analyzing Requirements and Designing the Data Schema</a></li>
-<li><a href="02_part_2.html#creating-the-necessary-tables"><span class="toc-section-number">4.2</span> Creating the Necessary Tables</a></li>
+<li><a href="02_part_2.html#analyzing-requirements-and-designing-the-data-schema"><span class="toc-section-number">5.1</span> Analyzing Requirements and Designing the Data Schema</a></li>
+<li><a href="02_part_2.html#creating-the-necessary-tables"><span class="toc-section-number">5.2</span> Creating the Necessary Tables</a></li>
 </ul></li>
-<li><a href="03_part_3.html#exercise-3-creating-and-editing-data-in-qgis"><span class="toc-section-number">5</span> Exercise 3: Creating and Editing Data in QGIS</a>
+<li><a href="03_part_3.html#exercise-3-creating-and-editing-data-in-qgis"><span class="toc-section-number">6</span> Exercise 3: Creating and Editing Data in QGIS</a>
 <ul>
-<li><a href="03_part_3.html#loading-some-aerial-imagery-for-context-in-qgis"><span class="toc-section-number">5.1</span> Loading some aerial imagery for context in QGIS</a></li>
-<li><a href="03_part_3.html#loading-the-data-and-creating-new-features"><span class="toc-section-number">5.2</span> Loading the Data and Creating New Features</a></li>
-<li><a href="03_part_3.html#editing-existing-features"><span class="toc-section-number">5.3</span> Editing Existing Features</a></li>
-<li><a href="03_part_3.html#deleting-unnecessary-features"><span class="toc-section-number">5.4</span> Deleting Unnecessary Features</a></li>
+<li><a href="03_part_3.html#loading-some-aerial-imagery-for-context-in-qgis"><span class="toc-section-number">6.1</span> Loading some aerial imagery for context in QGIS</a></li>
+<li><a href="03_part_3.html#loading-the-data-and-creating-new-features"><span class="toc-section-number">6.2</span> Loading the Data and Creating New Features</a></li>
+<li><a href="03_part_3.html#editing-existing-features"><span class="toc-section-number">6.3</span> Editing Existing Features</a></li>
+<li><a href="03_part_3.html#deleting-unnecessary-features"><span class="toc-section-number">6.4</span> Deleting Unnecessary Features</a></li>
 </ul></li>
-<li><a href="04_part_4.html#exercise-4-creating-lookup-tables-and-utilizing-lookup-values"><span class="toc-section-number">6</span> Exercise 4: Creating Lookup Tables and Utilizing Lookup Values</a>
+<li><a href="04_part_4.html#exercise-4-creating-lookup-tables-and-utilizing-lookup-values"><span class="toc-section-number">7</span> Exercise 4: Creating Lookup Tables and Utilizing Lookup Values</a>
 <ul>
-<li><a href="04_part_4.html#identifying-attributes-requiring-predefined-values"><span class="toc-section-number">6.1</span> Identifying Attributes Requiring Predefined Values</a></li>
-<li><a href="04_part_4.html#creating-an-enumeration-table"><span class="toc-section-number">6.2</span> Creating an Enumeration Table</a></li>
-<li><a href="04_part_4.html#establishing-relationships-with-the-main-data-table"><span class="toc-section-number">6.3</span> Establishing Relationships with the Main Data Table</a></li>
-<li><a href="04_part_4.html#populating-the-enumeration-table"><span class="toc-section-number">6.4</span> Populating the Enumeration Table</a></li>
-<li><a href="04_part_4.html#using-the-enumeration-table-in-qgis"><span class="toc-section-number">6.5</span> Using the Enumeration Table in QGIS</a></li>
-<li><a href="04_part_4.html#visualizing-the-relations-between-the-database-tables"><span class="toc-section-number">6.6</span> Visualizing the relations between the database tables</a></li>
+<li><a href="04_part_4.html#identifying-attributes-requiring-predefined-values"><span class="toc-section-number">7.1</span> Identifying Attributes Requiring Predefined Values</a></li>
+<li><a href="04_part_4.html#creating-an-enumeration-table"><span class="toc-section-number">7.2</span> Creating an Enumeration Table</a></li>
+<li><a href="04_part_4.html#establishing-relationships-with-the-main-data-table"><span class="toc-section-number">7.3</span> Establishing Relationships with the Main Data Table</a></li>
+<li><a href="04_part_4.html#populating-the-enumeration-table"><span class="toc-section-number">7.4</span> Populating the Enumeration Table</a></li>
+<li><a href="04_part_4.html#using-the-enumeration-table-in-qgis"><span class="toc-section-number">7.5</span> Using the Enumeration Table in QGIS</a></li>
+<li><a href="04_part_4.html#visualizing-the-relations-between-the-database-tables"><span class="toc-section-number">7.6</span> Visualizing the relations between the database tables</a></li>
 </ul></li>
-<li><a href="05_part_5.html#exercise-5-workflow-optimization-and-data-entry-forms"><span class="toc-section-number">7</span> Exercise 5: Workflow Optimization and Data Entry Forms</a>
+<li><a href="05_part_5.html#exercise-5-workflow-optimization-and-data-entry-forms"><span class="toc-section-number">8</span> Exercise 5: Workflow Optimization and Data Entry Forms</a>
 <ul>
-<li><a href="05_part_5.html#designing-a-data-entry-form"><span class="toc-section-number">7.1</span> Designing a Data Entry Form</a></li>
-<li><a href="05_part_5.html#discovering-table-relations-in-qgis-before-setting-up-the-forms"><span class="toc-section-number">7.2</span> Discovering table relations in QGIS before setting up the forms</a></li>
-<li><a href="05_part_5.html#enabling-and-configuring-form-widgets"><span class="toc-section-number">7.3</span> Enabling and Configuring Form Widgets</a></li>
-<li><a href="05_part_5.html#going-beyond-the-basics"><span class="toc-section-number">7.4</span> Going beyond the basics</a></li>
+<li><a href="05_part_5.html#designing-a-data-entry-form"><span class="toc-section-number">8.1</span> Designing a Data Entry Form</a></li>
+<li><a href="05_part_5.html#discovering-table-relations-in-qgis-before-setting-up-the-forms"><span class="toc-section-number">8.2</span> Discovering table relations in QGIS before setting up the forms</a></li>
+<li><a href="05_part_5.html#enabling-and-configuring-form-widgets"><span class="toc-section-number">8.3</span> Enabling and Configuring Form Widgets</a></li>
+<li><a href="05_part_5.html#going-beyond-the-basics"><span class="toc-section-number">8.4</span> Going beyond the basics</a></li>
 </ul></li>
-<li><a href="06_part_6.html#exercise-6-advanced-topics"><span class="toc-section-number">8</span> Exercise 6: Advanced Topics</a>
+<li><a href="06_part_6.html#exercise-6-advanced-topics"><span class="toc-section-number">9</span> Exercise 6: Advanced Topics</a>
 <ul>
-<li><a href="06_part_6.html#creating-triggers-for-data-entry-automation"><span class="toc-section-number">8.1</span> Creating Triggers for Data Entry Automation</a></li>
-<li><a href="06_part_6.html#creating-some-sample-data"><span class="toc-section-number">8.2</span> Creating some sample data</a></li>
+<li><a href="06_part_6.html#creating-triggers-for-data-entry-automation"><span class="toc-section-number">9.1</span> Creating Triggers for Data Entry Automation</a></li>
+<li><a href="06_part_6.html#creating-some-sample-data"><span class="toc-section-number">9.2</span> Creating some sample data</a></li>
 </ul></li>
 </ul>
 </div>
@@ -191,23 +192,29 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <h4 class="author">Gispo Ltd.</h4>
 
-<h4 id="build-date">Version: 2023-06-25</h4>
+<h4 id="build-date">Version: 2023-07-04</h4>
 
 <div class="abstract"><p>Workshop delivered in FOSS4G Prizren 2023.</p></div>
 
 </div>
-<!-- Exercises -->
-<div id="welcome" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Welcome!</h1>
-<p>Workshop Objectives:</p>
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>Welcome to the workshop on “Building an Enterprise GIS Workflow with QGIS and PostGIS” originally presented at FOSS4G 2023 Prizren (Kosovo). This workshop combines informative slides and hands-on exercises designed to guide you through the process of setting up a powerful GIS environment using QGIS and PostGIS. You can access the workshop slides through the following <a href="https://drive.google.com/file/d/1AAZrR3EQcrioT99CG66VNiS1S6sZ5W1I/view?usp=sharing">link</a>, and the exercises are available on this website for your reference and practice.</p>
+<div class="figure">
+<img src="img/p1/sample_data.png" width="517" alt="" />
+<p class="caption">QGIS is a robust environment for building PostGIS-enabled Enterprise GIS workflows</p>
+</div>
+</div>
+<div id="workshop-objectives" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Workshop Objectives:</h1>
 <ul>
 <li><p>Create an enterprise GIS workflow using QGIS and PostGIS.</p></li>
 <li><p>Explore the benefits of spatial databases and their role in GIS data management.</p></li>
 <li><p>Set up QGIS projects to optimize GIS data management.</p></li>
 </ul>
 </div>
-<div id="reading-instructions" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Reading instructions</h1>
+<div id="reading-instructions" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Reading instructions</h1>
 <p>The commands executed in the web browser are indicated as follows:</p>
 <div class="note-box">
 <p><a href="http://localhost:8080/geoserver" class="uri">http://localhost:8080/geoserver</a></p>
@@ -230,8 +237,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>GeoServer has its own website.</p>
 <p>Psst! You can find information about GeoServer on the internet.</p>
 </div>
-<div id="software-in-question-and-further-information" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Software in question and further information</h2>
+<div id="software-in-question-and-further-information" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Software in question and further information</h2>
 <div class="note-box">
 <p><a href="http://www.qgis.org/" class="uri">http://www.qgis.org/</a></p>
 </div>
@@ -245,12 +252,12 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p><a href="https://postgis.net/documentation//" class="uri">https://postgis.net/documentation//</a></p>
 </div>
 </div>
-<div id="errors" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Errors</h2>
+<div id="errors" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Errors</h2>
 <p>If you notice any errors in the material, please inform the trainer/workshop facilitator.</p>
 </div>
-<div id="license-and-user-rights" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> License and user rights</h2>
+<div id="license-and-user-rights" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> License and user rights</h2>
 <p>These materials are developed by Gispo Ltd. Materials are licensed under: <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a></p>
 
 </div>
@@ -267,7 +274,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Building an Enterprise GIS Workflow with QGIS and PostGIS</h5>
-<span class="footer-version">v2023-06-25</span>
+<span class="footer-version">v2023-07-04</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 
