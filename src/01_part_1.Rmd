@@ -88,6 +88,10 @@ QGIS can work as your database client. If you have another PostgreSQL client of 
 
     ![](img/p1/add_postgres.png)
 
+    If you are using a PostGIS database using Aiven or any other cloud provider the same pop-up window would like this:
+
+    ![](images/paste-EA802788.png)
+
 6.  The database should now appear under the "PostgreSQL" node in the "Browser" panel.
 
 ![](img/p1/03.png)
