@@ -90,7 +90,7 @@ QGIS can work as your database client. If you have another PostgreSQL client of 
 
     If you are using a PostGIS database using Aiven or any other cloud provider the same pop-up window would like this:
 
-    ![](images/paste-EA802788.png)
+    ![](img/p1/qgis_pg_conn_aiven.png)
 
     If you get errors when testing the connection, be sure to ensure that you do not have any spaces in the connection parameters (Host, Port, Database, Username, Password). Sometimes the extra spaces come along when we copy and paste text.
 
