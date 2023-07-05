@@ -1,7 +1,15 @@
-# Course template
+# Workshop repository
 
-This is a template repository for creating new courses on GitHub.
+Welcome to the repository for the workshop on "Building PostGIS-enabled Enterprise GIS Workflows with QGIS." This workshop was originally presented at FOSS4G 2023 in Prizren, Kosovo.
 
+## Workshop Materials
+The workshop materials are composed of slides and exercises, which you can access via the github pages link of this repository.
+
+Feel free to explore the materials and follow along with the workshop content at your own pace. If you have any questions or need further assistance, please don't hesitate to reach out.
+
+## License
+The content of this repository is licensed under the [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/).
+ 
 ## Repository configuration
 
 After creating a new repository from this template, two steps are required to publish the course materials online.
