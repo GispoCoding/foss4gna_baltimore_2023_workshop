@@ -1,6 +1,6 @@
 # Workshop repository
 
-Welcome to the repository for the workshop on "Building PostGIS-enabled Enterprise GIS Workflows with QGIS." This workshop was originally presented at FOSS4G 2023 in Prizren, Kosovo.
+Welcome to the repository for the workshop on "Building PostGIS-enabled Enterprise GIS Workflows with QGIS." This workshop was originally presented at FOSS4G-NA in Baltimore, Maryland, US.
 
 ## Workshop Materials
 The workshop materials are composed of slides and exercises, which you can access via the github pages link of this repository.

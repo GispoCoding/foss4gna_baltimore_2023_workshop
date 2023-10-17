@@ -1,10 +1,10 @@
 # Exercise 1: Database Creation and Integration
 
-Imagine you are the Head of GIS or any other GIS representative in the Refuge Camp in Chattogram, Bangalesh, working for the International Organization for Migration (IOM).
+Imagine you are the Head of GIS or any other GIS representative in the Refuge Camp in Chattogram, Bangladesh, working for the International Organization for Migration (IOM).
 
 ### Installation and Configuration: QGIS
 
-You will need QGIS for this workshop. If you already have QGIS instaled, great! It is recommended to use the latest Long-Term Release (LTR) version, which can be downloaded from the official QGIS website: <https://www.qgis.org/en/site/forusers/download.html>. Due to workshop schedule constraints and potential internet limitations, if you already have an earlier version of QGIS installed on your computer, you can use that version for the workshop.
+You will need QGIS for this workshop. If you already have QGIS installed, great! It is recommended to use the latest Long-Term Release (LTR) version, which can be downloaded from the official QGIS website: <https://www.qgis.org/en/site/forusers/download.html>. Due to workshop schedule constraints and potential internet limitations, if you already have an earlier version of QGIS installed on your computer, you can use that version for the workshop.
 
 However, it is still recommended to have the latest Long-Term Release (LTR) version of QGIS to ensure compatibility and access to the most up-to-date features.
 

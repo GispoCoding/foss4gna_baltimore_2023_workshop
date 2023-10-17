@@ -3,7 +3,7 @@ title: "Building an Enterprise GIS Workflow with QGIS and PostGIS"
 author: "Gispo Ltd."
 date: "`r Sys.Date()`"
 site: "bookdown::bookdown_site"
-abstract: "Workshop delivered in FOSS4G Prizren 2023."
+abstract: "Workshop delivered in FOSS4G-NA Baltimore 2023."
 output:
     bookdown::html_book:
         toc: true
@@ -16,7 +16,7 @@ documentclass: book
 
 # Introduction
 
-Welcome to the workshop on "Building an Enterprise GIS Workflow with QGIS and PostGIS" originally presented at FOSS4G 2023 Prizren (Kosovo). This workshop combines informative slides and hands-on exercises designed to guide you through the process of setting up a powerful GIS environment using QGIS and PostGIS. You can access the workshop slides through the following [link](https://drive.google.com/file/d/1AAZrR3EQcrioT99CG66VNiS1S6sZ5W1I/view?usp=sharing), and the exercises are available on this website for your reference and practice.
+Welcome to the workshop on "Building an Enterprise GIS Workflow with QGIS and PostGIS" originally presented at FOSS4G 2023 Prizren (Kosovo). This workshop combines informative slides and hands-on exercises designed to guide you through the process of setting up a powerful GIS environment using QGIS and PostGIS. You can access the workshop slides through the following [link](https://drive.google.com/file/d/1182W68W3UalZ3z1iDP46daX4K7lMGsDR/view?usp=share_link), and the exercises are available on this website for your reference and practice.
 
 ![QGIS is a robust environment for building PostGIS-enabled Enterprise GIS workflows](img/p1/sample_data.png){width="517"}
 
