@@ -1,6 +1,6 @@
 # Exercise 1: Database Creation and Integration
 
-Imagine you are the Head of GIS or any other GIS representative in the Refuge Camp in Chattogram, Bangladesh, working for the International Organization for Migration (IOM).
+Imagine you are the Head of GIS or any other GIS representative in the Refuge Camp in Chattogram, Bangladesh, working for the International Organization for Migration (IOM). 
 
 ### Installation and Configuration: QGIS
 
