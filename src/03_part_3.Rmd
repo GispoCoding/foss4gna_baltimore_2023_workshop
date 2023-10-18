@@ -4,7 +4,7 @@ Now you will proceed to test the designed data model by creating data within QGI
 
 ## Loading some aerial imagery for context in QGIS
 
-For the sake of the workshop, download some recent aerial imagery that your team and collaborators have acquired from the area of interest from the this [link (in Google Drive)](https://drive.google.com/file/d/1182W68W3UalZ3z1iDP46daX4K7lMGsDR/view?usp=share_link), and add the .tif-file to your QGIS project:
+For the sake of the workshop, download some recent aerial imagery that your team and collaborators have acquired from the area of interest from the this link ([in Google Drive](https://drive.google.com/file/d/1d88eDPO95nlpVxwgQ95VurHk07q6s5K0/view?usp=share_link)), and add the .tif-file to your QGIS project:
 
 ![](img/p1/add_aerial_img.png)
 

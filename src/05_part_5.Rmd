@@ -6,7 +6,7 @@ Next, we will customize the data entry form in QGIS to facilitate efficient data
 
 QGIS forms are a powerful tool that allows you to create customized data entry interfaces within QGIS. These forms provide a user-friendly way to input and edit attribute data, making it easier to capture and manage information effectively.
 
-QGIS forms can look something like below:
+As an example, QGIS forms can look something like below:
 
 ![](img/p1/qgis_form_example.png)
 
