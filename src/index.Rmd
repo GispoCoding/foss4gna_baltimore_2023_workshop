@@ -20,7 +20,7 @@ Welcome to the workshop on "Building an Enterprise GIS Workflow with QGIS and Po
 
 ![QGIS is a robust environment for building PostGIS-enabled Enterprise GIS workflows](img/p1/sample_data.png){width="517"}
 
-# Workshop Objectives:
+# Workshop Objectives
 
 -   Create an enterprise GIS workflow using QGIS and PostGIS.
 

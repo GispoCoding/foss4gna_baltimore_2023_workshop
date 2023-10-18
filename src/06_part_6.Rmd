@@ -12,20 +12,21 @@ Alter the table "dwellings" to add the "area" column:
 
 ::: code-box
 ``` sql
-ALTER TABLE dwellings ADD COLUMN area DOUBLE PRECISION; 
+ALTER TABLE dwellings 
+  ADD COLUMN area DOUBLE PRECISION; 
 ```
 :::
 
-Create the trigger function that calculates the area: :::
+Create the trigger function that calculates the area:
 
 ::: code-box
 ``` sql
 CREATE OR REPLACE FUNCTION calculate_area() RETURNS TRIGGER AS $$
-  BEGIN
-    NEW.area := ST_Area(NEW.geom);
-    RETURN NEW;
-  END;
-  $$ LANGUAGE plpgsql; 
+BEGIN
+  NEW.area := ST_Area(NEW.geom);
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql; 
 ```
 :::
 
@@ -33,15 +34,20 @@ Create the trigger on the "dwellings" table that calls the trigger function:
 
 ::: code-box
 ``` sql
-CREATE TRIGGER calculate_area_trigger BEFORE INSERT OR UPDATE ON dwellings FOR EACH ROW EXECUTE FUNCTION calculate_area(); 
+CREATE TRIGGER calculate_area_trigger BEFORE INSERT OR UPDATE ON dwellings 
+FOR EACH ROW EXECUTE FUNCTION calculate_area(); 
 ```
 :::
 
-Now, try to create some new features for the dwellings-table in QGIS. First you need to bring the table again to QGIS. every time a new polygon is inserted or updated in the "dwellings" table (ie. saved in QGIS), the trigger function "calculate_area" will be executed, and the area of the polygon will be automatically calculated and stored in the "area" column of the table.
+Now, try to create some new features for the dwellings-table in QGIS. First you need to bring the table again to QGIS, so just erase the Dwellings-table you have in QGIS and load (with e.g. a double click) the table again.
+
+Now that you have set up the trigger, every time a new polygon is inserted or updated in the "dwellings" table (ie. saved in QGIS), the trigger function "calculate_area" will be executed, and the area of the polygon will be automatically calculated and stored in the "area" column of the table.
+
+![](img/p1/trigger_in_action.gif)
 
 ## Creating some sample data
 
-We can create some sample data for you to imagine how your database-powered data management process could go for the long-term:
+We can also create some sample data for you to imagine how your database-powered data management process could go for the long-term:
 
 ::: code-box
 ``` sql

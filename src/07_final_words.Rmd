@@ -1,0 +1,47 @@
+### **Final Words**
+
+Thank you all for participating in this workshop on "Building an Enterprise GIS Workflow with QGIS and PostGIS." We've covered a lot of ground today, from the basics of spatial databases and QGIS, to advanced techniques such as data modeling and even touched upon on concepts as triggers.
+
+#### Key Takeaways:
+
+-   Understanding the fundamentals of QGIS and PostGIS for enterprise-level solutions.
+
+-   exploring what data modelling means in the context of spatial databases.
+
+-   Delving into the art of utilizing lookup tables and constraints for data integrity.
+
+#### Next Steps:
+
+-   For a deeper dive into any of the topics covered, we recommend exploring the official documentation for [QGIS](https://qgis.org/en/docs/index.html) and [PostGIS](https://postgis.net/docs/).
+
+-   Join community forums or online groups specializing in GIS technologies to stay up-to-date and network with like-minded professionals.
+
+-   See also which training courses could help in your journey towards becoming a FOSS4G expert: <https://www.gispo.fi/en/training/>
+
+#### Feedback:
+
+Your feedback is invaluable to us. We invite you to share your thoughts, experiences, and suggestions for improvement.
+
+Thank you once again for your active participation and enthusiasm. We look forward to seeing you at future events!
+
+### **Further Contact and Services**
+
+Unlock the full potential of geospatial data and FOSS4G technologies to make more effective, data-driven decisions for your organization. We are committed to help you in the challenges you face with geospatial data.
+
+**How We Serve You:**
+
+-   **Consultation**: As passionate *GIS artisans*, we provide highly specialized consultations using the industry's finest open-source geospatial tools. Our expertise aims to resolve your unique geospatial challenges.
+
+-   **Development**: Our skilled developers craft bespoke solutions that transform standalone tools into comprehensive, cost-effective GIS systems. Benefit from open-source products that eliminate the need for licensing fees.
+
+-   **Training**: Become a *GIS artisan* yourself by joining our training courses on QGIS, PostGIS, and GeoServer. We offer best practices and tips for map creation and geospatial data organization.
+
+-   **Support**: Stuck on a tough GIS issue? Our support team is here to assist you. Bring your questions and challenges, and we'll provide the solutions.
+
+To get started, visit [our website](https://www.gispo.fi/en/) or reach out via contact details below. We look forward to partnering with you to achieve your geospatial goals.
+
+[sales\@gispo.fi](mailto:sales@gispo.fi){.email}
+
+...or directly with Santtu, via:
+
+Santtu Pyykkönen, [santtu\@gispo.fi](mailto:santtu@gispo.fi){.email}

@@ -7,7 +7,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="5 Exercise 2 Data Structure Design and Creation | Building an Enterprise GIS Workflow with QGIS and PostGIS" />
+<meta property="og:title" content="9.2.1 Final Words | Building an Enterprise GIS Workflow with QGIS and PostGIS" />
 <meta property="og:type" content="book" />
 
 
@@ -19,9 +19,9 @@
 <meta name="date" content="2023-10-18" />
 
 
-<meta name="description" content="5 Exercise 2 Data Structure Design and Creation | Building an Enterprise GIS Workflow with QGIS and PostGIS">
+<meta name="description" content="9.2.1 Final Words | Building an Enterprise GIS Workflow with QGIS and PostGIS">
 
-<title>5 Exercise 2 Data Structure Design and Creation | Building an Enterprise GIS Workflow with QGIS and PostGIS</title>
+<title>9.2.1 Final Words | Building an Enterprise GIS Workflow with QGIS and PostGIS</title>
 
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
@@ -189,100 +189,51 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="exercise-2-data-structure-design-and-creation" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Exercise 2 Data Structure Design and Creation</h1>
-<p>In this exercise we will focus on designing and creating the initial database schema for capturing information about:</p>
+<div id="final-words" class="section level3" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> <strong>Final Words</strong></h3>
+<p>Thank you all for participating in this workshop on “Building an Enterprise GIS Workflow with QGIS and PostGIS.” We’ve covered a lot of ground today, from the basics of spatial databases and QGIS, to advanced techniques such as data modeling and even touched upon on concepts as triggers.</p>
+<div id="key-takeaways" class="section level4" number="9.2.1.1">
+<h4><span class="header-section-number">9.2.1.1</span> Key Takeaways:</h4>
 <ul>
-<li><p>dwellings,</p></li>
-<li><p>water distribution points, and</p></li>
-<li><p>educational facilities</p></li>
+<li><p>Understanding the fundamentals of QGIS and PostGIS for enterprise-level solutions.</p></li>
+<li><p>exploring what data modelling means in the context of spatial databases.</p></li>
+<li><p>Delving into the art of utilizing lookup tables and constraints for data integrity.</p></li>
 </ul>
-<p>…within the Kutupalong-Balukhali Expansion Site, a refugee camp in Chattogram, Bangladesh.</p>
-<div id="analyzing-requirements-and-designing-the-data-schema" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Analyzing Requirements and Designing the Data Schema</h2>
-<p>Now you will delve into the crucial process of analyzing requirements and designing the data schema. Imagine that your manager requested you to generate data about the dwellings, water distribution points, and educational facilities within the refugee camp.</p>
-<p>To initiate any data modeling process, it’s crucial to tackle the following fundamental question:</p>
+</div>
+<div id="next-steps" class="section level4" number="9.2.1.2">
+<h4><span class="header-section-number">9.2.1.2</span> Next Steps:</h4>
 <ul>
-<li>‘What specific information is essential to capture for each dwelling, water distribution point, and educational facility within the refugee camp?’"</li>
+<li><p>For a deeper dive into any of the topics covered, we recommend exploring the official documentation for <a href="https://qgis.org/en/docs/index.html">QGIS</a> and <a href="https://postgis.net/docs/">PostGIS</a>.</p></li>
+<li><p>Join community forums or online groups specializing in GIS technologies to stay up-to-date and network with like-minded professionals.</p></li>
+<li><p>See also which training courses could help in your journey towards becoming a FOSS4G expert: <a href="https://www.gispo.fi/en/training/" class="uri">https://www.gispo.fi/en/training/</a></p></li>
 </ul>
-<p>By identifying the different aspects to the information you’re interested in collecting, we can ensure that the database comprehensively represents the attributes and characteristics of these essential refuge camp components.</p>
-<p>First, you need to generate a simple table to represent your data needs, e.g. as follows:</p>
-<table style="width:100%;">
-<colgroup>
-<col width="24%" />
-<col width="24%" />
-<col width="26%" />
-<col width="24%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Table</strong></th>
-<th><strong>Table Name</strong></th>
-<th><strong>Attribute Information</strong></th>
-<th><strong>Geometry Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Dwellings</td>
-<td>dwellings</td>
-<td>capacity, occupancy_status</td>
-<td>Polygon</td>
-</tr>
-<tr class="even">
-<td>Water Distribution Points</td>
-<td>water_distribution_points</td>
-<td>capacity, operational_status</td>
-<td>Point</td>
-</tr>
-<tr class="odd">
-<td>Educational Facilities</td>
-<td>educational_facilities</td>
-<td>facility_type, capacity</td>
-<td>Point</td>
-</tr>
-</tbody>
-</table>
 </div>
-<div id="creating-the-necessary-tables" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Creating the Necessary Tables</h2>
-<p>Then, it’s time to create the tables with the following SQL that generates three tables and 3 to 4 columns with their corresponding data types:</p>
-<div class="code-box">
-<div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb4-1"><a href="02_part_2.html#cb4-1" aria-hidden="true"></a><span class="co">-- Creating the Dwellings table</span></span>
-<span id="cb4-2"><a href="02_part_2.html#cb4-2" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> dwellings (</span>
-<span id="cb4-3"><a href="02_part_2.html#cb4-3" aria-hidden="true"></a>    dwelling_id <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span> IDENTITY,</span>
-<span id="cb4-4"><a href="02_part_2.html#cb4-4" aria-hidden="true"></a>    capacity <span class="dt">INTEGER</span>,</span>
-<span id="cb4-5"><a href="02_part_2.html#cb4-5" aria-hidden="true"></a>    occupancy_status <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</span>
-<span id="cb4-6"><a href="02_part_2.html#cb4-6" aria-hidden="true"></a>    geom GEOMETRY(POLYGON, <span class="dv">32646</span>)</span>
-<span id="cb4-7"><a href="02_part_2.html#cb4-7" aria-hidden="true"></a>);</span>
-<span id="cb4-8"><a href="02_part_2.html#cb4-8" aria-hidden="true"></a></span>
-<span id="cb4-9"><a href="02_part_2.html#cb4-9" aria-hidden="true"></a><span class="co">-- Creating the Water Distribution Points table</span></span>
-<span id="cb4-10"><a href="02_part_2.html#cb4-10" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> water_distribution_points (</span>
-<span id="cb4-11"><a href="02_part_2.html#cb4-11" aria-hidden="true"></a>    point_id <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span> IDENTITY,</span>
-<span id="cb4-12"><a href="02_part_2.html#cb4-12" aria-hidden="true"></a>    capacity <span class="dt">INTEGER</span>,</span>
-<span id="cb4-13"><a href="02_part_2.html#cb4-13" aria-hidden="true"></a>    operational_status <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</span>
-<span id="cb4-14"><a href="02_part_2.html#cb4-14" aria-hidden="true"></a>    geom GEOMETRY(POINT, <span class="dv">32646</span>)</span>
-<span id="cb4-15"><a href="02_part_2.html#cb4-15" aria-hidden="true"></a>);</span>
-<span id="cb4-16"><a href="02_part_2.html#cb4-16" aria-hidden="true"></a></span>
-<span id="cb4-17"><a href="02_part_2.html#cb4-17" aria-hidden="true"></a><span class="co">-- Creating the Educational Facilities table</span></span>
-<span id="cb4-18"><a href="02_part_2.html#cb4-18" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> educational_facilities (</span>
-<span id="cb4-19"><a href="02_part_2.html#cb4-19" aria-hidden="true"></a>    facility_id <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span> IDENTITY,</span>
-<span id="cb4-20"><a href="02_part_2.html#cb4-20" aria-hidden="true"></a>    facility_type <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</span>
-<span id="cb4-21"><a href="02_part_2.html#cb4-21" aria-hidden="true"></a>    capacity <span class="dt">INTEGER</span>,</span>
-<span id="cb4-22"><a href="02_part_2.html#cb4-22" aria-hidden="true"></a>    geom GEOMETRY(POLYGON, <span class="dv">32646</span>)</span>
-<span id="cb4-23"><a href="02_part_2.html#cb4-23" aria-hidden="true"></a>);</span></code></pre></div>
+<div id="feedback" class="section level4" number="9.2.1.3">
+<h4><span class="header-section-number">9.2.1.3</span> Feedback:</h4>
+<p>Your feedback is invaluable to us. We invite you to share your thoughts, experiences, and suggestions for improvement.</p>
+<p>Thank you once again for your active participation and enthusiasm. We look forward to seeing you at future events!</p>
 </div>
-<p>Note that the code after the geometry type refers to the Coordinate Reference System (CRS). This CRS is commonly used in the UTM (Universal Transverse Mercator) projection for the region around Bangladesh, including our region of interest (Chattogram).</p>
-<p>Now you can launch QGIS and browse the tables available through the PostGIS connection you’ve established. Note that there’s no data yet, you can just see that the tables already exist:</p>
-<p><img src="img/p1/added_tables.png" /></p>
-<p>Note that you can also see tables like “geography_columns” and “geometry_columns” which come with the PostGIS extension.</p>
-<p>Great! Now you’ve created a few data structures for tables.</p>
+</div>
+<div id="further-contact-and-services" class="section level3" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> <strong>Further Contact and Services</strong></h3>
+<p>Unlock the full potential of geospatial data and FOSS4G technologies to make more effective, data-driven decisions for your organization. We are committed to help you in the challenges you face with geospatial data.</p>
+<p><strong>How We Serve You:</strong></p>
+<ul>
+<li><p><strong>Consultation</strong>: As passionate <em>GIS artisans</em>, we provide highly specialized consultations using the industry’s finest open-source geospatial tools. Our expertise aims to resolve your unique geospatial challenges.</p></li>
+<li><p><strong>Development</strong>: Our skilled developers craft bespoke solutions that transform standalone tools into comprehensive, cost-effective GIS systems. Benefit from open-source products that eliminate the need for licensing fees.</p></li>
+<li><p><strong>Training</strong>: Become a <em>GIS artisan</em> yourself by joining our training courses on QGIS, PostGIS, and GeoServer. We offer best practices and tips for map creation and geospatial data organization.</p></li>
+<li><p><strong>Support</strong>: Stuck on a tough GIS issue? Our support team is here to assist you. Bring your questions and challenges, and we’ll provide the solutions.</p></li>
+</ul>
+<p>To get started, visit <a href="https://www.gispo.fi/en/">our website</a> or reach out via contact details below. We look forward to partnering with you to achieve your geospatial goals.</p>
+<p><a href="mailto:sales@gispo.fi" class="email">sales@gispo.fi</a></p>
+<p>…or directly with Santtu, via:</p>
+<p>Santtu Pyykkönen, <a href="mailto:santtu@gispo.fi" class="email">santtu@gispo.fi</a></p>
 
 </div>
 </div>
+</div>
 <p style="text-align: center;">
-<a href="01_part_1.html"><button class="btn btn-default">Previous</button></a>
-<a href="03_part_3.html"><button class="btn btn-default">Next</button></a>
+<a href="06_part_6.html"><button class="btn btn-default">Previous</button></a>
 </p>
 </div>
 </div>

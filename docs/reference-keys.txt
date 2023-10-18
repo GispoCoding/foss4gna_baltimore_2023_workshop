@@ -38,3 +38,8 @@ going-beyond-the-basics
 exercise-6-advanced-topics
 creating-triggers-for-data-entry-automation
 creating-some-sample-data
+final-words
+key-takeaways
+next-steps
+feedback
+further-contact-and-services
