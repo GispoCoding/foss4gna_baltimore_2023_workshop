@@ -1,8 +1,8 @@
-### **Final Words**
+# Final Words
 
 Thank you all for participating in this workshop on "Building an Enterprise GIS Workflow with QGIS and PostGIS." We've covered a lot of ground today, from the basics of spatial databases and QGIS, to advanced techniques such as data modeling and even touched upon on concepts as triggers.
 
-#### Key Takeaways:
+# Key Takeaways:
 
 -   Understanding the fundamentals of QGIS and PostGIS for enterprise-level solutions.
 
@@ -10,7 +10,7 @@ Thank you all for participating in this workshop on "Building an Enterprise GIS 
 
 -   Delving into the art of utilizing lookup tables and constraints for data integrity.
 
-#### Next Steps:
+# Next Steps:
 
 -   For a deeper dive into any of the topics covered, we recommend exploring the official documentation for [QGIS](https://qgis.org/en/docs/index.html) and [PostGIS](https://postgis.net/docs/).
 
@@ -18,17 +18,19 @@ Thank you all for participating in this workshop on "Building an Enterprise GIS 
 
 -   See also which training courses could help in your journey towards becoming a FOSS4G expert: <https://www.gispo.fi/en/training/>
 
-#### Feedback:
+# Feedback:
 
 Your feedback is invaluable to us. We invite you to share your thoughts, experiences, and suggestions for improvement.
 
+<https://forms.gle/5mLDUS3BMZpXMRWr7>
+
 Thank you once again for your active participation and enthusiasm. We look forward to seeing you at future events!
 
-### **Further Contact and Services**
+# Further Contact and Services:
 
 Unlock the full potential of geospatial data and FOSS4G technologies to make more effective, data-driven decisions for your organization. We are committed to help you in the challenges you face with geospatial data.
 
-**How We Serve You:**
+## How We Serve You:
 
 -   **Consultation**: As passionate *GIS artisans*, we provide highly specialized consultations using the industry's finest open-source geospatial tools. Our expertise aims to resolve your unique geospatial challenges.
 
