@@ -25,11 +25,11 @@ editing-existing-features
 deleting-unnecessary-features
 exercise-4-creating-lookup-tables-and-utilizing-lookup-values
 identifying-attributes-requiring-predefined-values
-creating-an-enumeration-table
+creating-lookupenumeration-tables
 establishing-relationships-with-the-main-data-table
 populating-the-enumeration-table
 using-the-enumeration-table-in-qgis
-visualizing-the-relations-between-the-database-tables
+understanding-and-visualizing-the-relations-between-the-database-tables
 exercise-5-workflow-optimization-and-data-entry-forms
 designing-a-data-entry-form
 discovering-table-relations-in-qgis-before-setting-up-the-forms

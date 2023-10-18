@@ -158,11 +158,11 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <li><a href="04_part_4.html#exercise-4-creating-lookup-tables-and-utilizing-lookup-values"><span class="toc-section-number">7</span> Exercise 4: Creating Lookup Tables and Utilizing Lookup Values</a>
 <ul>
 <li><a href="04_part_4.html#identifying-attributes-requiring-predefined-values"><span class="toc-section-number">7.1</span> Identifying Attributes Requiring Predefined Values</a></li>
-<li><a href="04_part_4.html#creating-an-enumeration-table"><span class="toc-section-number">7.2</span> Creating an Enumeration Table</a></li>
+<li><a href="04_part_4.html#creating-lookupenumeration-tables"><span class="toc-section-number">7.2</span> Creating Lookup/Enumeration Tables</a></li>
 <li><a href="04_part_4.html#establishing-relationships-with-the-main-data-table"><span class="toc-section-number">7.3</span> Establishing Relationships with the Main Data Table</a></li>
 <li><a href="04_part_4.html#populating-the-enumeration-table"><span class="toc-section-number">7.4</span> Populating the Enumeration Table</a></li>
 <li><a href="04_part_4.html#using-the-enumeration-table-in-qgis"><span class="toc-section-number">7.5</span> Using the Enumeration Table in QGIS</a></li>
-<li><a href="04_part_4.html#visualizing-the-relations-between-the-database-tables"><span class="toc-section-number">7.6</span> Visualizing the relations between the database tables</a></li>
+<li><a href="04_part_4.html#understanding-and-visualizing-the-relations-between-the-database-tables"><span class="toc-section-number">7.6</span> Understanding and visualizing the relations between the database tables</a></li>
 </ul></li>
 <li><a href="05_part_5.html#exercise-5-workflow-optimization-and-data-entry-forms"><span class="toc-section-number">8</span> Exercise 5: Workflow Optimization and Data Entry Forms</a>
 <ul>
@@ -219,44 +219,53 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </tbody>
 </table>
 </div>
-<div id="creating-an-enumeration-table" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Creating an Enumeration Table</h2>
+<div id="creating-lookupenumeration-tables" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Creating Lookup/Enumeration Tables</h2>
 <div class="code-box">
 <div class="sourceCode" id="cb5"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb5-1"><a href="04_part_4.html#cb5-1" aria-hidden="true"></a><span class="co">-- Lookup table for Dwellings&#39; Occupancy Status </span></span>
-<span id="cb5-2"><a href="04_part_4.html#cb5-2" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> dwellings_occupancy_status ( <span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span> IDENTITY <span class="kw">PRIMARY</span> <span class="kw">KEY</span>, status <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> );</span>
-<span id="cb5-3"><a href="04_part_4.html#cb5-3" aria-hidden="true"></a></span>
-<span id="cb5-4"><a href="04_part_4.html#cb5-4" aria-hidden="true"></a><span class="co">-- Lookup table for Water Distribution Points&#39; Operational Status </span></span>
-<span id="cb5-5"><a href="04_part_4.html#cb5-5" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> water_distribution_operational_status ( <span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span> IDENTITY <span class="kw">PRIMARY</span> <span class="kw">KEY</span>, status <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> );</span>
+<span id="cb5-2"><a href="04_part_4.html#cb5-2" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> dwellings_occupancy_status ( </span>
+<span id="cb5-3"><a href="04_part_4.html#cb5-3" aria-hidden="true"></a>  <span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span> IDENTITY <span class="kw">PRIMARY</span> <span class="kw">KEY</span>, </span>
+<span id="cb5-4"><a href="04_part_4.html#cb5-4" aria-hidden="true"></a>  status <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> </span>
+<span id="cb5-5"><a href="04_part_4.html#cb5-5" aria-hidden="true"></a>  );</span>
 <span id="cb5-6"><a href="04_part_4.html#cb5-6" aria-hidden="true"></a></span>
-<span id="cb5-7"><a href="04_part_4.html#cb5-7" aria-hidden="true"></a><span class="co">-- Lookup table for Educational Facilities&#39; Facility Type </span></span>
-<span id="cb5-8"><a href="04_part_4.html#cb5-8" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> educational_facilities_facility_type ( <span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span> IDENTITY <span class="kw">PRIMARY</span> <span class="kw">KEY</span>, <span class="kw">type</span> <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> ); </span></code></pre></div>
+<span id="cb5-7"><a href="04_part_4.html#cb5-7" aria-hidden="true"></a><span class="co">-- Lookup table for Water Distribution Points&#39; Operational Status </span></span>
+<span id="cb5-8"><a href="04_part_4.html#cb5-8" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> water_distribution_operational_status ( </span>
+<span id="cb5-9"><a href="04_part_4.html#cb5-9" aria-hidden="true"></a>  <span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span> IDENTITY <span class="kw">PRIMARY</span> <span class="kw">KEY</span>, </span>
+<span id="cb5-10"><a href="04_part_4.html#cb5-10" aria-hidden="true"></a>  status <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> </span>
+<span id="cb5-11"><a href="04_part_4.html#cb5-11" aria-hidden="true"></a>  );</span>
+<span id="cb5-12"><a href="04_part_4.html#cb5-12" aria-hidden="true"></a></span>
+<span id="cb5-13"><a href="04_part_4.html#cb5-13" aria-hidden="true"></a><span class="co">-- Lookup table for Educational Facilities&#39; Facility Type </span></span>
+<span id="cb5-14"><a href="04_part_4.html#cb5-14" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> educational_facilities_facility_type ( </span>
+<span id="cb5-15"><a href="04_part_4.html#cb5-15" aria-hidden="true"></a>  <span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span> IDENTITY <span class="kw">PRIMARY</span> <span class="kw">KEY</span>, </span>
+<span id="cb5-16"><a href="04_part_4.html#cb5-16" aria-hidden="true"></a>  <span class="kw">type</span> <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> </span>
+<span id="cb5-17"><a href="04_part_4.html#cb5-17" aria-hidden="true"></a>  ); </span></code></pre></div>
 </div>
-<p>Add foreign keys to the main tables. foreign keys establish a relationship between tables by</p>
+<p>Add foreign keys to the main tables. Foreign keys establish a relationship between tables by linking a column in one table to the primary key column of another table. This ensures data integrity and enables more complex queries and data operations.</p>
 </div>
 <div id="establishing-relationships-with-the-main-data-table" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Establishing Relationships with the Main Data Table</h2>
-<p>Referencing the primary key of one table from another table, ensuring referential integrity and maintaining data consistency.</p>
+<p>By referencing the primary key of one table from a column in another table, you ensure referential integrity and uphold a consistent data structure across multiple tables.</p>
 <div class="code-box">
 <div class="sourceCode" id="cb6"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb6-1"><a href="04_part_4.html#cb6-1" aria-hidden="true"></a><span class="co">-- Add foreign key constraint to Dwellings table</span></span>
 <span id="cb6-2"><a href="04_part_4.html#cb6-2" aria-hidden="true"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> dwellings</span>
-<span id="cb6-3"><a href="04_part_4.html#cb6-3" aria-hidden="true"></a><span class="kw">ADD</span> <span class="kw">COLUMN</span> occupancy_status_id <span class="dt">INTEGER</span>,</span>
-<span id="cb6-4"><a href="04_part_4.html#cb6-4" aria-hidden="true"></a><span class="kw">ADD</span> <span class="kw">CONSTRAINT</span> fk_dwellings_occupancy_status</span>
-<span id="cb6-5"><a href="04_part_4.html#cb6-5" aria-hidden="true"></a>  <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (occupancy_status_id)</span>
-<span id="cb6-6"><a href="04_part_4.html#cb6-6" aria-hidden="true"></a>  <span class="kw">REFERENCES</span> dwellings_occupancy_status (<span class="kw">id</span>);</span>
+<span id="cb6-3"><a href="04_part_4.html#cb6-3" aria-hidden="true"></a>  <span class="kw">ADD</span> <span class="kw">COLUMN</span> occupancy_status_id <span class="dt">INTEGER</span>,</span>
+<span id="cb6-4"><a href="04_part_4.html#cb6-4" aria-hidden="true"></a>  <span class="kw">ADD</span> <span class="kw">CONSTRAINT</span> fk_dwellings_occupancy_status</span>
+<span id="cb6-5"><a href="04_part_4.html#cb6-5" aria-hidden="true"></a>    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (occupancy_status_id)</span>
+<span id="cb6-6"><a href="04_part_4.html#cb6-6" aria-hidden="true"></a>    <span class="kw">REFERENCES</span> dwellings_occupancy_status (<span class="kw">id</span>);</span>
 <span id="cb6-7"><a href="04_part_4.html#cb6-7" aria-hidden="true"></a></span>
 <span id="cb6-8"><a href="04_part_4.html#cb6-8" aria-hidden="true"></a><span class="co">-- Add foreign key constraint to Water Distribution Points table</span></span>
 <span id="cb6-9"><a href="04_part_4.html#cb6-9" aria-hidden="true"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> water_distribution_points</span>
-<span id="cb6-10"><a href="04_part_4.html#cb6-10" aria-hidden="true"></a><span class="kw">ADD</span> <span class="kw">COLUMN</span> operational_status_id <span class="dt">INTEGER</span>,</span>
-<span id="cb6-11"><a href="04_part_4.html#cb6-11" aria-hidden="true"></a><span class="kw">ADD</span> <span class="kw">CONSTRAINT</span> fk_water_distribution_operational_status</span>
-<span id="cb6-12"><a href="04_part_4.html#cb6-12" aria-hidden="true"></a>  <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (operational_status_id)</span>
-<span id="cb6-13"><a href="04_part_4.html#cb6-13" aria-hidden="true"></a>  <span class="kw">REFERENCES</span> water_distribution_operational_status (<span class="kw">id</span>);</span>
+<span id="cb6-10"><a href="04_part_4.html#cb6-10" aria-hidden="true"></a>  <span class="kw">ADD</span> <span class="kw">COLUMN</span> operational_status_id <span class="dt">INTEGER</span>,</span>
+<span id="cb6-11"><a href="04_part_4.html#cb6-11" aria-hidden="true"></a>  <span class="kw">ADD</span> <span class="kw">CONSTRAINT</span> fk_water_distribution_operational_status</span>
+<span id="cb6-12"><a href="04_part_4.html#cb6-12" aria-hidden="true"></a>    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (operational_status_id)</span>
+<span id="cb6-13"><a href="04_part_4.html#cb6-13" aria-hidden="true"></a>    <span class="kw">REFERENCES</span> water_distribution_operational_status (<span class="kw">id</span>);</span>
 <span id="cb6-14"><a href="04_part_4.html#cb6-14" aria-hidden="true"></a></span>
 <span id="cb6-15"><a href="04_part_4.html#cb6-15" aria-hidden="true"></a><span class="co">-- Add foreign key constraint to Educational Facilities table</span></span>
 <span id="cb6-16"><a href="04_part_4.html#cb6-16" aria-hidden="true"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> educational_facilities</span>
-<span id="cb6-17"><a href="04_part_4.html#cb6-17" aria-hidden="true"></a><span class="kw">ADD</span> <span class="kw">COLUMN</span> facility_type_id <span class="dt">INTEGER</span>,</span>
-<span id="cb6-18"><a href="04_part_4.html#cb6-18" aria-hidden="true"></a><span class="kw">ADD</span> <span class="kw">CONSTRAINT</span> fk_educational_facilities_facility_type</span>
-<span id="cb6-19"><a href="04_part_4.html#cb6-19" aria-hidden="true"></a>  <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (facility_type_id)</span>
-<span id="cb6-20"><a href="04_part_4.html#cb6-20" aria-hidden="true"></a>  <span class="kw">REFERENCES</span> educational_facilities_facility_type (<span class="kw">id</span>);</span></code></pre></div>
+<span id="cb6-17"><a href="04_part_4.html#cb6-17" aria-hidden="true"></a>  <span class="kw">ADD</span> <span class="kw">COLUMN</span> facility_type_id <span class="dt">INTEGER</span>,</span>
+<span id="cb6-18"><a href="04_part_4.html#cb6-18" aria-hidden="true"></a>  <span class="kw">ADD</span> <span class="kw">CONSTRAINT</span> fk_educational_facilities_facility_type</span>
+<span id="cb6-19"><a href="04_part_4.html#cb6-19" aria-hidden="true"></a>    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (facility_type_id)</span>
+<span id="cb6-20"><a href="04_part_4.html#cb6-20" aria-hidden="true"></a>    <span class="kw">REFERENCES</span> educational_facilities_facility_type (<span class="kw">id</span>);</span></code></pre></div>
 </div>
 </div>
 <div id="populating-the-enumeration-table" class="section level2" number="7.4">
@@ -264,25 +273,37 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>Now we will populate the lookup tables with predefined values. You can also edit these afterwords in QGIS.</p>
 <div class="code-box">
 <div class="sourceCode" id="cb7"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb7-1"><a href="04_part_4.html#cb7-1" aria-hidden="true"></a><span class="co">-- Populate Dwellings&#39; Occupancy Status lookup table </span></span>
-<span id="cb7-2"><a href="04_part_4.html#cb7-2" aria-hidden="true"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> dwellings_occupancy_status (status) <span class="kw">VALUES</span> (<span class="st">&#39;Occupied&#39;</span>), (<span class="st">&#39;Vacant&#39;</span>), (<span class="st">&#39;Under Construction&#39;</span>);</span>
-<span id="cb7-3"><a href="04_part_4.html#cb7-3" aria-hidden="true"></a></span>
-<span id="cb7-4"><a href="04_part_4.html#cb7-4" aria-hidden="true"></a><span class="co">-- Populate Water Distribution Points&#39; Operational Status lookup table </span></span>
-<span id="cb7-5"><a href="04_part_4.html#cb7-5" aria-hidden="true"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> water_distribution_operational_status (status) <span class="kw">VALUES</span> (<span class="st">&#39;Active&#39;</span>), (<span class="st">&#39;Temporarily Closed&#39;</span>);</span>
-<span id="cb7-6"><a href="04_part_4.html#cb7-6" aria-hidden="true"></a></span>
-<span id="cb7-7"><a href="04_part_4.html#cb7-7" aria-hidden="true"></a><span class="co">-- Populate Educational Facilities&#39; Facility Type lookup table </span></span>
-<span id="cb7-8"><a href="04_part_4.html#cb7-8" aria-hidden="true"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> educational_facilities_facility_type (<span class="kw">type</span>) <span class="kw">VALUES</span> (<span class="st">&#39;School&#39;</span>), (<span class="st">&#39;Vocational Training Center&#39;</span>);</span></code></pre></div>
+<span id="cb7-2"><a href="04_part_4.html#cb7-2" aria-hidden="true"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> dwellings_occupancy_status (status) <span class="kw">VALUES</span> </span>
+<span id="cb7-3"><a href="04_part_4.html#cb7-3" aria-hidden="true"></a>  (<span class="st">&#39;Occupied&#39;</span>), </span>
+<span id="cb7-4"><a href="04_part_4.html#cb7-4" aria-hidden="true"></a>  (<span class="st">&#39;Vacant&#39;</span>), </span>
+<span id="cb7-5"><a href="04_part_4.html#cb7-5" aria-hidden="true"></a>  (<span class="st">&#39;Under Construction&#39;</span>)</span>
+<span id="cb7-6"><a href="04_part_4.html#cb7-6" aria-hidden="true"></a>;</span>
+<span id="cb7-7"><a href="04_part_4.html#cb7-7" aria-hidden="true"></a></span>
+<span id="cb7-8"><a href="04_part_4.html#cb7-8" aria-hidden="true"></a><span class="co">-- Populate Water Distribution Points&#39; Operational Status lookup table </span></span>
+<span id="cb7-9"><a href="04_part_4.html#cb7-9" aria-hidden="true"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> water_distribution_operational_status (status) <span class="kw">VALUES</span> </span>
+<span id="cb7-10"><a href="04_part_4.html#cb7-10" aria-hidden="true"></a>  (<span class="st">&#39;Active&#39;</span>), </span>
+<span id="cb7-11"><a href="04_part_4.html#cb7-11" aria-hidden="true"></a>  (<span class="st">&#39;Temporarily Closed&#39;</span>)</span>
+<span id="cb7-12"><a href="04_part_4.html#cb7-12" aria-hidden="true"></a>;</span>
+<span id="cb7-13"><a href="04_part_4.html#cb7-13" aria-hidden="true"></a></span>
+<span id="cb7-14"><a href="04_part_4.html#cb7-14" aria-hidden="true"></a><span class="co">-- Populate Educational Facilities&#39; Facility Type lookup table </span></span>
+<span id="cb7-15"><a href="04_part_4.html#cb7-15" aria-hidden="true"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> educational_facilities_facility_type (<span class="kw">type</span>) <span class="kw">VALUES</span> </span>
+<span id="cb7-16"><a href="04_part_4.html#cb7-16" aria-hidden="true"></a>  (<span class="st">&#39;School&#39;</span>), </span>
+<span id="cb7-17"><a href="04_part_4.html#cb7-17" aria-hidden="true"></a>  (<span class="st">&#39;Vocational Training Center&#39;</span>)</span>
+<span id="cb7-18"><a href="04_part_4.html#cb7-18" aria-hidden="true"></a>;</span></code></pre></div>
 </div>
 </div>
 <div id="using-the-enumeration-table-in-qgis" class="section level2" number="7.5">
 <h2><span class="header-section-number">7.5</span> Using the Enumeration Table in QGIS</h2>
-<p>You can further customize and edit these tables in QGIS. To load them into QGIS, simply double-click the tables from the browser panel, and they will be added to your project. You can visualize and explore the data using the attribute table view in QGIS. In the next phase, we will establish connections between these tables and the main tables, laying the foundation for ensuring data integrity and maintaining consistency in our database.</p>
+<p>You can further customize and edit these tables in QGIS. To load them into QGIS, simply double-click the tables from the browser panel, and they will be added to your project. You can visualize and explore the data using the attribute table view in QGIS.</p>
+<p><img src="img/p1/edit_lookup_tables.gif" /></p>
+<p>In the next section, we will establish connections between these tables and the main tables, laying the foundation for ensuring data integrity and maintaining consistency in our database.</p>
 </div>
-<div id="visualizing-the-relations-between-the-database-tables" class="section level2" number="7.6">
-<h2><span class="header-section-number">7.6</span> Visualizing the relations between the database tables</h2>
-<p>If you have installed a relational database management system such as pgAdmin or dBeaver you can visualize the relations.</p>
-<p>For example, in pgAdmin there’s the “ERD for Database” functionality:</p>
+<div id="understanding-and-visualizing-the-relations-between-the-database-tables" class="section level2" number="7.6">
+<h2><span class="header-section-number">7.6</span> Understanding and visualizing the relations between the database tables</h2>
+<p>If you have installed a relational database management system such as pgAdmin or dBeaver you can visualize the relations. If not, don’t worry, simply refer to the image below to gain a clearer understanding of the interrelationships among the tables.</p>
+<p>In pgAdmin there’s the “ERD for Database” functionality:</p>
 <p><img src="img/p1/table_relations.png" /></p>
-<p>Try this by yourself, if have pgAdmin installed, following the screenshot numbering:</p>
+<p>Again, if have pgAdmin installed, try this by yourself, following the screenshot numbering:</p>
 <ol style="list-style-type: decimal">
 <li>Make the database connection</li>
 <li>Double click the database connection</li>
