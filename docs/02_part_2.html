@@ -187,12 +187,22 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <div class="col-sm-12">
 <div id="exercise-2-data-structure-design-and-creation" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Exercise 2 Data Structure Design and Creation</h1>
-<p>In this exercise we will focus on designing and creating the initial database schema for capturing information about dwellings, water distribution points, and educational facilities within the Kutupalong-Balukhali Expansion Site, a refugee camp in Chattogram, Bangladesh.</p>
+<p>In this exercise we will focus on designing and creating the initial database schema for capturing information about:</p>
+<ul>
+<li><p>dwellings,</p></li>
+<li><p>water distribution points, and</p></li>
+<li><p>educational facilities</p></li>
+</ul>
+<p>…within the Kutupalong-Balukhali Expansion Site, a refugee camp in Chattogram, Bangladesh.</p>
 <div id="analyzing-requirements-and-designing-the-data-schema" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Analyzing Requirements and Designing the Data Schema</h2>
-<p>Now you will delve into the crucial process of analyzing requirements and designing the data schema. You were requested to generate data for the dwellings, water distribution points, and educational facilities within the refugee camp.</p>
-<p>To begin, it is vital to address the following key question: “What specific information needs to be captured for each dwelling, water distribution point, and educational facility within the refugee camp?” By identifying the different aspects to the information you’re interested in collecting, we can ensure that the database comprehensively represents the attributes and characteristics of these essential camp components.</p>
-<p>First, you need to acquire information as follows:</p>
+<p>Now you will delve into the crucial process of analyzing requirements and designing the data schema. Imagine that your manager requested you to generate data about the dwellings, water distribution points, and educational facilities within the refugee camp.</p>
+<p>To initiate any data modeling process, it’s crucial to tackle the following fundamental question:</p>
+<ul>
+<li>‘What specific information is essential to capture for each dwelling, water distribution point, and educational facility within the refugee camp?’"</li>
+</ul>
+<p>By identifying the different aspects to the information you’re interested in collecting, we can ensure that the database comprehensively represents the attributes and characteristics of these essential refuge camp components.</p>
+<p>First, you need to generate a simple table to represent your data needs, e.g. as follows:</p>
 <table style="width:100%;">
 <colgroup>
 <col width="24%" />
@@ -232,7 +242,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <div id="creating-the-necessary-tables" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Creating the Necessary Tables</h2>
-<p>Then, it’s time to create the tables with the following SQL that generates three tables and 3 to 4 columns with their correesponding data types:</p>
+<p>Then, it’s time to create the tables with the following SQL that generates three tables and 3 to 4 columns with their corresponding data types:</p>
 <div class="code-box">
 <div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb4-1"><a href="02_part_2.html#cb4-1" aria-hidden="true"></a><span class="co">-- Creating the Dwellings table</span></span>
 <span id="cb4-2"><a href="02_part_2.html#cb4-2" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> dwellings (</span>
@@ -282,7 +292,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <div class="footer-info">
 <h5 class="footer-title footer-company">Gispo Ltd.
 <span class="footer-copyright-year">© 2023</span></h5>
-<span class="footer-contact-info">Kumpulantie 3, 3 krs
+<span class="footer-contact-info">Kumpulantie 3, 3. krs
 <br>00520 Helsinki, Finland
 <br>info@gispo.fi
 </span>
@@ -295,8 +305,6 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 
 <script src="js/nav-script.js"></script>
-<script src="js/answer-key.js"></script>
-<script src="js/find_keys.js"></script>
 
 </body>
 </html>
