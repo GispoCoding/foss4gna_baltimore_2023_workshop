@@ -1,14 +1,26 @@
 # Exercise 2 Data Structure Design and Creation
 
-In this exercise we will focus on designing and creating the initial database schema for capturing information about dwellings, water distribution points, and educational facilities within the Kutupalong-Balukhali Expansion Site, a refugee camp in Chattogram, Bangladesh.
+In this exercise we will focus on designing and creating the initial database schema for capturing information about:
+
+-   dwellings,
+
+-   water distribution points, and
+
+-   educational facilities
+
+...within the Kutupalong-Balukhali Expansion Site, a refugee camp in Chattogram, Bangladesh.
 
 ## Analyzing Requirements and Designing the Data Schema
 
-Now you will delve into the crucial process of analyzing requirements and designing the data schema. You were requested to generate data for the dwellings, water distribution points, and educational facilities within the refugee camp.
+Now you will delve into the crucial process of analyzing requirements and designing the data schema. Imagine that your manager requested you to generate data about the dwellings, water distribution points, and educational facilities within the refugee camp.
 
-To begin, it is vital to address the following key question: "What specific information needs to be captured for each dwelling, water distribution point, and educational facility within the refugee camp?" By identifying the different aspects to the information you're interested in collecting, we can ensure that the database comprehensively represents the attributes and characteristics of these essential camp components.
+To initiate any data modeling process, it's crucial to tackle the following fundamental question:
 
-First, you need to acquire information as follows:
+-   'What specific information is essential to capture for each dwelling, water distribution point, and educational facility within the refugee camp?'"
+
+By identifying the different aspects to the information you're interested in collecting, we can ensure that the database comprehensively represents the attributes and characteristics of these essential refuge camp components.
+
+First, you need to generate a simple table to represent your data needs, e.g. as follows:
 
 | **Table**                 | **Table Name**            | **Attribute Information**    | **Geometry Type** |
 |------------------|------------------|-------------------|------------------|
@@ -18,7 +30,7 @@ First, you need to acquire information as follows:
 
 ## Creating the Necessary Tables
 
-Then, it's time to create the tables with the following SQL that generates three tables and 3 to 4 columns with their correesponding data types:
+Then, it's time to create the tables with the following SQL that generates three tables and 3 to 4 columns with their corresponding data types:
 
 ::: code-box
 ``` sql
