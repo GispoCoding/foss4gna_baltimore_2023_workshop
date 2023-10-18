@@ -3,6 +3,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Courier:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+
+/* to-do */
+.todo {
+    background-color: red;
+    color:#eeeeee;
+}
 
 /* Generics */
 body { overflow-x: hidden; }
@@ -207,14 +214,26 @@ h5 { font-size: 100% !important; }
 }
 
 /* Tables */
-table {
-    border-collapse: collapse;
-}
-th, td {
-    border: 1px solid #434662;
-    padding: 0.4em
-  }
 
+table .header {
+    background-color: #7a3884;
+    color: #fbfbfb !important;
+}
+
+table .odd {
+    background-color: #FCFCFC;
+}
+
+table .even {
+    background-color: #F5F5F5;
+}
+
+table th,
+table td {
+    border-right: 1px solid #ffffff;
+    padding: 0.8em;
+}
+  
 /* Buttons */
 
 .btn {
@@ -234,6 +253,45 @@ th, td {
     text-decoration: none;
     background-color: #ab8b9b !important;
 }
+
+.copy-button {
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid #434662;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+.copy-button{
+    color: #8588a2;
+}
+
+.copy-button:hover{
+    color: #434662;
+}
+  
+.copy-button::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0c5";
+  }
+
+.copy-button.show-checkmark::before {
+    content: "\f00c";
+    color:#0f9400;
+}
+  
+.code-box:hover .copy-button,
+.commandline-box:hover .copy-button {
+    visibility: visible;
+  }
+  
 
 /* Footer */
 
@@ -320,8 +378,11 @@ th, td {
 }
 
 .code-box {
+    position: relative;
     background: #e8ecf3;
-    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0.1rem;
+    padding-left: 1.3rem;
     border: none;
     margin-bottom: 1rem;
 }
@@ -349,8 +410,11 @@ code span {
 }
 
 .commandline-box {
-    background: #ab8b9b;
-    padding: 10px;
+    position: relative;
+    background: #f9edf3;
+    padding-bottom: 0.01rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
     border: none;
     margin-bottom: 1rem;
 }
@@ -358,6 +422,12 @@ code span {
 .commandline-box p {
     color: #fbfbfb;
     margin: 0 !important;
+}
+
+.hidden-box {
+    display: none;
+    padding: 1rem;
+    background: #f0f0f079;
 }
 
 /* Media queries */
