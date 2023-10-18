@@ -61,3 +61,11 @@ CREATE TABLE educational_facilities (
 :::
 
 Note that the code after the geometry type refers to the Coordinate Reference System (CRS). This CRS is commonly used in the UTM (Universal Transverse Mercator) projection for the region around Bangladesh, including our region of interest (Chattogram).
+
+Now you can launch QGIS and browse the tables available through the PostGIS connection you've established. Note that there's no data yet, you can just see that the tables already exist:
+
+![](img/p1/added_tables.png)
+
+Note that you can also see tables like "geography_columns" and "geometry_columns" which come with the PostGIS extension.
+
+Great! Now you've created a few data structures for tables.

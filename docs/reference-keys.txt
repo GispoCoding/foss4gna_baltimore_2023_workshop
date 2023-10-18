@@ -11,7 +11,10 @@ deploying-postgresql-on-localhost
 managed-remote-database-aiven
 connecting-to-the-database-with-a-database-client
 integrating-the-database-with-qgis
+troubleshooting-aiven
+exploring-the-connection
 creating-the-database-specifically-for-the-refuge-camp
+finally-adding-postgis-to-the-database
 exercise-2-data-structure-design-and-creation
 analyzing-requirements-and-designing-the-data-schema
 creating-the-necessary-tables

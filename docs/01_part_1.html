@@ -259,7 +259,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <div id="connecting-to-the-database-with-a-database-client" class="section level4" number="4.0.2.3">
 <h4><span class="header-section-number">4.0.2.3</span> Connecting to the database with a database client</h4>
-<p>QGIS will serve as your database client in this workship, enabling seamless connectivity to your database.</p>
+<p>QGIS will serve as your database client in this workshop, enabling seamless connectivity to your database.</p>
 <p>If you have another PostgreSQL client of preference (e.g. <a href="https://www.pgadmin.org/">pgAdmin</a>, <a href="https://dbeaver.io/">Dbeaver</a>), you can also use these database tools to explore your data and understand how databases work.</p>
 </div>
 </div>
@@ -273,25 +273,29 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>Enter the necessary connection details, including the database name, host, port, username, and password. Mark also “Also list tables with no geometry” as well.</p>
 <p><img src="img/p1/qgis_add_connection_details.gif" /></p>
 <p>Click “Test Connection” to verify the connection and ensure it is successful.</p>
+<p>After you’ve connected to the database, save the username and password by clicking “Convert to configuration”.</p>
+<p><img src="img/p1/convert_to_config.png" /></p>
+<p>Once the connection is verified, click “OK” to close the dialog and establish the connection.</p>
+<p>To recap, if you are using a PostGIS database using Aiven or any other cloud provider the same pop-up window would like this:</p>
+<p><img src="img/p1/qgis_pg_conn_aiven.png" /></p>
+<div id="troubleshooting-aiven" class="section level4" number="4.0.3.1">
+<h4><span class="header-section-number">4.0.3.1</span> Troubleshooting Aiven</h4>
+<p>If you get errors when testing the connection, be sure to ensure that you do not have any spaces in the connection parameters (Host, Port, Database, Username, Password). Sometimes the extra spaces come along when we copy and paste text.</p>
 <div class="hint-box">
-<p>When using Aiven, ensure first that the database is built:</p>
+<p>If problems persist, ensure first that the database is built:</p>
 <p><img src="img/p1/aiven_db_running.png" width="317" /></p>
 </div>
-<ol style="list-style-type: decimal">
-<li><p>Once the connection is verified, click “OK” to close the dialog and establish the connection.</p>
-<ol style="list-style-type: decimal">
-<li><p>If you are using a PostGIS database using Aiven or any other cloud provider the same pop-up window would like this:</p>
-<p><img src="img/p1/qgis_pg_conn_aiven.png" /></p>
-<p>If you get errors when testing the connection, be sure to ensure that you do not have any spaces in the connection parameters (Host, Port, Database, Username, Password). Sometimes the extra spaces come along when we copy and paste text.</p></li>
-<li><p>Using a localhost setup for the workshop, the database connection details would look for example as follows: <img src="img/p1/add_postgres.png" /></p></li>
-</ol></li>
-<li><p>The database should now appear under the “PostgreSQL” node in the “Browser” panel.</p></li>
-</ol>
+<p>Using a localhost setup for the workshop, the database connection details would look for example as follows: <img src="img/p1/add_postgres.png" /></p>
+</div>
+<div id="exploring-the-connection" class="section level4" number="4.0.3.2">
+<h4><span class="header-section-number">4.0.3.2</span> Exploring the connection</h4>
+<p>The database should now appear under the “PostgreSQL” node in the “Browser” panel.</p>
 <p><img src="img/p1/03.png" /></p>
+</div>
 </div>
 <div id="creating-the-database-specifically-for-the-refuge-camp" class="section level3" number="4.0.4">
 <h3><span class="header-section-number">4.0.4</span> Creating the Database specifically for the Refuge Camp</h3>
-<p>In addition to the default database that PostgreSQL automatically generates, which is typically named ‘postgres’ or ‘defaultdb’ (in Aiven), it’s important to create a separate, dedicated database specifically for our Refugee Camp workshop thematics.</p>
+<p>In addition to the default database that PostgreSQL automatically generates, which is typically named ‘postgres’ or ‘defaultdb’ (in Aiven), we shall create a separate, dedicated database specifically for our Refugee Camp project.</p>
 <p>You can execute / run SQL in QGIS in various manners, one is right-clicking the database connection you just created and choosing execute SQL.</p>
 <p><img src="img/p1/exec_sql.png" /></p>
 <p>Copy and paste the following SQL for creating the database:</p>
@@ -300,13 +304,18 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <p><img src="img/p1/create_db.png" /></p>
 <p>Then, edit the db-connection you already made, and change the name of the database to camp_facilities_db, which refers to the database you just created:</p>
-<p><img src="img/p1/change_db_info.png" /></p>
-<p>And then we need to enable the PostGIS spatial extension, by executing the following SQL (as before / in the same window):</p>
+<p><img src="img/p1/change_db.gif" /></p>
+<div id="finally-adding-postgis-to-the-database" class="section level4" number="4.0.4.1">
+<h4><span class="header-section-number">4.0.4.1</span> Finally: adding PostGIS to the database</h4>
+<p>And then we need to enable the PostGIS spatial extension, which includes all the spatial functionalities for your PostgreSQL database. You do this by executing the following SQL (as before / in the same window):</p>
 <div class="code-box">
 <div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="01_part_1.html#cb3-1" aria-hidden="true"></a><span class="kw">CREATE</span> EXTENSION postgis;</span></code></pre></div>
 </div>
+<div class="hint-box">
 <p>For long-term database management, you might consider utilizing specialized tools like pgAdmin or DBeaver. Alternatively, the psql command-line tool offers another robust solution for connecting to and managing your PostgreSQL databases. It’s important to note that these tools simply provide various avenues for accessing your database, each with its own set of features and advantages.</p>
+</div>
 
+</div>
 </div>
 </div>
 <p style="text-align: center;">
@@ -329,7 +338,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <div class="footer-info">
 <h5 class="footer-title footer-company">Gispo Ltd.
 <span class="footer-copyright-year">© 2023</span></h5>
-<span class="footer-contact-info">Kumpulantie 3, 3. krs
+<span class="footer-contact-info">Kumpulantie 3, 3 krs
 <br>00520 Helsinki, Finland
 <br>info@gispo.fi
 </span>
@@ -342,6 +351,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 
 <script src="js/nav-script.js"></script>
+<script src="js/answer-key.js"></script>
+<script src="js/find_keys.js"></script>
 
 </body>
 </html>

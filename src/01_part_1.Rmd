@@ -1,6 +1,6 @@
 # Exercise 1: Database Creation and Integration
 
-Imagine you are the Head of GIS or any other GIS representative in the Refuge Camp in Chattogram, Bangladesh, working for the International Organization for Migration (IOM). 
+Imagine you are the Head of GIS or any other GIS representative in the Refuge Camp in Chattogram, Bangladesh, working for the International Organization for Migration (IOM).
 
 ### Installation and Configuration: QGIS
 
@@ -68,7 +68,7 @@ Beyond the benefits of the Free Tier, you have the opportunity to explore a more
 
 #### Connecting to the database with a database client
 
-QGIS will serve as your database client in this workship, enabling seamless connectivity to your database.
+QGIS will serve as your database client in this workshop, enabling seamless connectivity to your database.
 
 If you have another PostgreSQL client of preference (e.g. [pgAdmin](https://www.pgadmin.org/), [Dbeaver](https://dbeaver.io/)), you can also use these database tools to explore your data and understand how databases work.
 
@@ -86,29 +86,37 @@ Enter the necessary connection details, including the database name, host, port,
 
 Click "Test Connection" to verify the connection and ensure it is successful.
 
+After you've connected to the database, save the username and password by clicking "Convert to configuration".
+
+![](img/p1/convert_to_config.png)
+
+Once the connection is verified, click "OK" to close the dialog and establish the connection.
+
+To recap, if you are using a PostGIS database using Aiven or any other cloud provider the same pop-up window would like this:
+
+![](img/p1/qgis_pg_conn_aiven.png)
+
+#### Troubleshooting Aiven
+
+If you get errors when testing the connection, be sure to ensure that you do not have any spaces in the connection parameters (Host, Port, Database, Username, Password). Sometimes the extra spaces come along when we copy and paste text.
+
 ::: hint-box
-When using Aiven, ensure first that the database is built:
+If problems persist, ensure first that the database is built:
 
 ![](img/p1/aiven_db_running.png){width="317"}
 :::
 
-1.  Once the connection is verified, click "OK" to close the dialog and establish the connection.
+Using a localhost setup for the workshop, the database connection details would look for example as follows: ![](img/p1/add_postgres.png)
 
-    1.  If you are using a PostGIS database using Aiven or any other cloud provider the same pop-up window would like this:
+#### Exploring the connection
 
-        ![](img/p1/qgis_pg_conn_aiven.png)
-
-        If you get errors when testing the connection, be sure to ensure that you do not have any spaces in the connection parameters (Host, Port, Database, Username, Password). Sometimes the extra spaces come along when we copy and paste text.
-
-    2.  Using a localhost setup for the workshop, the database connection details would look for example as follows: ![](img/p1/add_postgres.png)
-
-2.  The database should now appear under the "PostgreSQL" node in the "Browser" panel.
+The database should now appear under the "PostgreSQL" node in the "Browser" panel.
 
 ![](img/p1/03.png)
 
 ### Creating the Database specifically for the Refuge Camp
 
-In addition to the default database that PostgreSQL automatically generates, which is typically named 'postgres' or 'defaultdb' (in Aiven), it's important to create a separate, dedicated database specifically for our Refugee Camp workshop thematics.
+In addition to the default database that PostgreSQL automatically generates, which is typically named 'postgres' or 'defaultdb' (in Aiven), we shall create a separate, dedicated database specifically for our Refugee Camp project.
 
 You can execute / run SQL in QGIS in various manners, one is right-clicking the database connection you just created and choosing execute SQL.
 
@@ -126,9 +134,11 @@ CREATE DATABASE camp_facilities_db;
 
 Then, edit the db-connection you already made, and change the name of the database to camp_facilities_db, which refers to the database you just created:
 
-![](img/p1/change_db_info.png)
+![](img/p1/change_db.gif)
 
-And then we need to enable the PostGIS spatial extension, by executing the following SQL (as before / in the same window):
+#### Finally: adding PostGIS to the database
+
+And then we need to enable the PostGIS spatial extension, which includes all the spatial functionalities for your PostgreSQL database. You do this by executing the following SQL (as before / in the same window):
 
 ::: code-box
 ``` sql
@@ -136,4 +146,6 @@ CREATE EXTENSION postgis;
 ```
 :::
 
+::: hint-box
 For long-term database management, you might consider utilizing specialized tools like pgAdmin or DBeaver. Alternatively, the psql command-line tool offers another robust solution for connecting to and managing your PostgreSQL databases. It's important to note that these tools simply provide various avenues for accessing your database, each with its own set of features and advantages.
+:::
