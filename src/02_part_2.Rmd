@@ -23,7 +23,7 @@ By identifying the different aspects to the information you're interested in col
 First, you need to generate a simple table to represent your data needs, e.g. as follows:
 
 | **Table**                 | **Table Name**            | **Attribute Information**    | **Geometry Type** |
-|------------------|------------------|-------------------|------------------|
+|---------------------------|---------------------------|------------------------------|-------------------|
 | Dwellings                 | dwellings                 | capacity, occupancy_status   | Polygon           |
 | Water Distribution Points | water_distribution_points | capacity, operational_status | Point             |
 | Educational Facilities    | educational_facilities    | facility_type, capacity      | Point             |
