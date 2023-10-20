@@ -1,9 +1,4 @@
 introduction
-workshop-objectives
-reading-instructions
-software-in-question-and-further-information
-errors
-license-and-user-rights
 exercise-1-database-creation-and-integration
 installation-and-configuration-qgis
 installation-and-configuration-postgresql

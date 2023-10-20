@@ -13,80 +13,49 @@ output:
         split_by: rmd
 documentclass: book
 ---
-
 # Introduction
 Welcome to the enhanced workshop on "Building an Enterprise GIS Workflow with QGIS and PostGIS", first presented at the FOSS4G 2023 in Prizren, Kosovo. This workshop combines informative slides and hands-on exercises designed to guide you through the process of setting up a powerful GIS environment using QGIS and PostGIS. You can access the workshop slides through the following [link](https://drive.google.com/file/d/1182W68W3UalZ3z1iDP46daX4K7lMGsDR/view?usp=share_link), and the exercises are available on this website for your reference and practice.
 
-![QGIS is a robust environment for building PostGIS-enabled Enterprise GIS workflows](img/p1/sample_data.png){width="517"}
-
-# Workshop Objectives
-
--   Create an enterprise GIS workflow using QGIS and PostGIS.
-
--   Explore the benefits of spatial databases and their role in GIS data management.
-
--   Set up QGIS projects to optimize GIS data management.
-
+![QGIS is a robust environment for building PostGIS-enabled Enterprise GIS workflows](img/p1/sample_data.png){width="517"} \# Workshop Objectives - Create an enterprise GIS workflow using QGIS and PostGIS. - Explore the benefits of spatial databases and their role in GIS data management. - Set up QGIS projects to optimize GIS data management.
 # Reading instructions
-
 The commands executed in the web browser are indicated as follows:
-
 ::: note-box
 <http://localhost:8080/geoserver>
 :::
-
 The commands executed on the command line are indicated as follows:
-
 ::: commandline-box
 sudo lsb_release -a
 :::
-
 The contents of the files are presented as follows:
-
 ::: file-content-box
 #IPv4 local connections: #host all all 127.0.0.1/32 md5
 :::
-
 The HTML and CSS codes, SQL commands, and Python scripts are presented as follows:
-
 ::: code-box
 ``` sql
 SELECT version();
 ```
 :::
-
 The questions, additional information, and hints are presented as follows:
-
 ::: hint-box
 Where can you find information about GeoServer?
-
 GeoServer has its own website.
-
 Psst! You can find information about GeoServer on the internet.
 :::
-
 ## Software in question and further information
-
 ::: note-box
 <http://www.qgis.org/>
 :::
-
 ::: note-box
 <http://docs.qgis.org/>
 :::
-
 ::: note-box
 <https://www.postgis.net/>
 :::
-
 ::: note-box
 <https://postgis.net/documentation//>
 :::
-
 ## Errors
-
 If you notice any errors in the material, please inform the trainer/workshop facilitator.
-
 ## License and user rights
-
 These materials are developed by Gispo Ltd. Materials are licensed under: [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)
