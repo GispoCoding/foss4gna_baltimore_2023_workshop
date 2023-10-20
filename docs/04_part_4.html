@@ -7,7 +7,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="5 Exercise 4: Creating Lookup Tables and Utilizing Lookup Values | Building an Enterprise GIS Workflow with QGIS and PostGIS" />
+<meta property="og:title" content="6 Exercise 4: Creating Lookup Tables and Utilizing Lookup Values | Building an Enterprise GIS Workflow with QGIS and PostGIS" />
 <meta property="og:type" content="book" />
 
 
@@ -19,9 +19,9 @@
 <meta name="date" content="2023-10-20" />
 
 
-<meta name="description" content="5 Exercise 4: Creating Lookup Tables and Utilizing Lookup Values | Building an Enterprise GIS Workflow with QGIS and PostGIS">
+<meta name="description" content="6 Exercise 4: Creating Lookup Tables and Utilizing Lookup Values | Building an Enterprise GIS Workflow with QGIS and PostGIS">
 
-<title>5 Exercise 4: Creating Lookup Tables and Utilizing Lookup Values | Building an Enterprise GIS Workflow with QGIS and PostGIS</title>
+<title>6 Exercise 4: Creating Lookup Tables and Utilizing Lookup Values | Building an Enterprise GIS Workflow with QGIS and PostGIS</title>
 
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
@@ -129,54 +129,60 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <div id="TOC" class="toc">
 <ul>
 <li><a href="index.html#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
-<li><a href="01_part_1.html#exercise-1-database-creation-and-integration"><span class="toc-section-number">2</span> Exercise 1: Database Creation and Integration</a>
+<li><a href="index.html#reading-instructions"><span class="toc-section-number">2</span> Reading instructions</a>
 <ul>
-<li><a href="01_part_1.html#installation-and-configuration-qgis"><span class="toc-section-number">2.0.1</span> Installation and Configuration: QGIS</a></li>
-<li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">2.0.2</span> Installation and Configuration: PostgreSQL</a></li>
-<li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">2.0.3</span> Integrating the Database with QGIS</a></li>
-<li><a href="01_part_1.html#creating-the-database-specifically-for-the-refuge-camp"><span class="toc-section-number">2.0.4</span> Creating the Database specifically for the Refuge Camp</a></li>
+<li><a href="index.html#software-in-question-and-further-information"><span class="toc-section-number">2.1</span> Software in question and further information</a></li>
+<li><a href="index.html#errors"><span class="toc-section-number">2.2</span> Errors</a></li>
+<li><a href="index.html#license-and-user-rights"><span class="toc-section-number">2.3</span> License and user rights</a></li>
 </ul></li>
-<li><a href="02_part_2.html#exercise-2-data-structure-design-and-creation"><span class="toc-section-number">3</span> Exercise 2 Data Structure Design and Creation</a>
+<li><a href="01_part_1.html#exercise-1-database-creation-and-integration"><span class="toc-section-number">3</span> Exercise 1: Database Creation and Integration</a>
 <ul>
-<li><a href="02_part_2.html#analyzing-requirements-and-designing-the-data-schema"><span class="toc-section-number">3.1</span> Analyzing Requirements and Designing the Data Schema</a></li>
-<li><a href="02_part_2.html#creating-the-necessary-tables"><span class="toc-section-number">3.2</span> Creating the Necessary Tables</a></li>
+<li><a href="01_part_1.html#installation-and-configuration-qgis"><span class="toc-section-number">3.0.1</span> Installation and Configuration: QGIS</a></li>
+<li><a href="01_part_1.html#installation-and-configuration-postgresql"><span class="toc-section-number">3.0.2</span> Installation and Configuration: PostgreSQL</a></li>
+<li><a href="01_part_1.html#integrating-the-database-with-qgis"><span class="toc-section-number">3.0.3</span> Integrating the Database with QGIS</a></li>
+<li><a href="01_part_1.html#creating-the-database-specifically-for-the-refuge-camp"><span class="toc-section-number">3.0.4</span> Creating the Database specifically for the Refuge Camp</a></li>
 </ul></li>
-<li><a href="03_part_3.html#exercise-3-creating-and-editing-data-in-qgis"><span class="toc-section-number">4</span> Exercise 3: Creating and Editing Data in QGIS</a>
+<li><a href="02_part_2.html#exercise-2-data-structure-design-and-creation"><span class="toc-section-number">4</span> Exercise 2 Data Structure Design and Creation</a>
 <ul>
-<li><a href="03_part_3.html#loading-some-aerial-imagery-for-context-in-qgis"><span class="toc-section-number">4.1</span> Loading some aerial imagery for context in QGIS</a></li>
-<li><a href="03_part_3.html#loading-the-data-and-creating-new-features"><span class="toc-section-number">4.2</span> Loading the Data and Creating New Features</a></li>
-<li><a href="03_part_3.html#editing-existing-features"><span class="toc-section-number">4.3</span> Editing Existing Features</a></li>
-<li><a href="03_part_3.html#deleting-unnecessary-features"><span class="toc-section-number">4.4</span> Deleting Unnecessary Features</a></li>
+<li><a href="02_part_2.html#analyzing-requirements-and-designing-the-data-schema"><span class="toc-section-number">4.1</span> Analyzing Requirements and Designing the Data Schema</a></li>
+<li><a href="02_part_2.html#creating-the-necessary-tables"><span class="toc-section-number">4.2</span> Creating the Necessary Tables</a></li>
 </ul></li>
-<li><a href="04_part_4.html#exercise-4-creating-lookup-tables-and-utilizing-lookup-values"><span class="toc-section-number">5</span> Exercise 4: Creating Lookup Tables and Utilizing Lookup Values</a>
+<li><a href="03_part_3.html#exercise-3-creating-and-editing-data-in-qgis"><span class="toc-section-number">5</span> Exercise 3: Creating and Editing Data in QGIS</a>
 <ul>
-<li><a href="04_part_4.html#identifying-attributes-requiring-predefined-values"><span class="toc-section-number">5.1</span> Identifying Attributes Requiring Predefined Values</a></li>
-<li><a href="04_part_4.html#creating-lookupenumeration-tables"><span class="toc-section-number">5.2</span> Creating Lookup/Enumeration Tables</a></li>
-<li><a href="04_part_4.html#establishing-relationships-with-the-main-data-table"><span class="toc-section-number">5.3</span> Establishing Relationships with the Main Data Table</a></li>
-<li><a href="04_part_4.html#populating-the-enumeration-table"><span class="toc-section-number">5.4</span> Populating the Enumeration Table</a></li>
-<li><a href="04_part_4.html#using-the-enumeration-table-in-qgis"><span class="toc-section-number">5.5</span> Using the Enumeration Table in QGIS</a></li>
-<li><a href="04_part_4.html#understanding-and-visualizing-the-relations-between-the-database-tables"><span class="toc-section-number">5.6</span> Understanding and visualizing the relations between the database tables</a></li>
+<li><a href="03_part_3.html#loading-some-aerial-imagery-for-context-in-qgis"><span class="toc-section-number">5.1</span> Loading some aerial imagery for context in QGIS</a></li>
+<li><a href="03_part_3.html#loading-the-data-and-creating-new-features"><span class="toc-section-number">5.2</span> Loading the Data and Creating New Features</a></li>
+<li><a href="03_part_3.html#editing-existing-features"><span class="toc-section-number">5.3</span> Editing Existing Features</a></li>
+<li><a href="03_part_3.html#deleting-unnecessary-features"><span class="toc-section-number">5.4</span> Deleting Unnecessary Features</a></li>
 </ul></li>
-<li><a href="05_part_5.html#exercise-5-workflow-optimization-and-data-entry-forms"><span class="toc-section-number">6</span> Exercise 5: Workflow Optimization and Data Entry Forms</a>
+<li><a href="04_part_4.html#exercise-4-creating-lookup-tables-and-utilizing-lookup-values"><span class="toc-section-number">6</span> Exercise 4: Creating Lookup Tables and Utilizing Lookup Values</a>
 <ul>
-<li><a href="05_part_5.html#designing-a-data-entry-form"><span class="toc-section-number">6.1</span> Designing a Data Entry Form</a></li>
-<li><a href="05_part_5.html#discovering-table-relations-in-qgis-before-setting-up-the-forms"><span class="toc-section-number">6.2</span> Discovering table relations in QGIS before setting up the forms</a></li>
-<li><a href="05_part_5.html#enabling-and-configuring-form-widgets"><span class="toc-section-number">6.3</span> Enabling and Configuring Form Widgets</a></li>
-<li><a href="05_part_5.html#going-beyond-the-basics"><span class="toc-section-number">6.4</span> Going beyond the basics</a></li>
+<li><a href="04_part_4.html#identifying-attributes-requiring-predefined-values"><span class="toc-section-number">6.1</span> Identifying Attributes Requiring Predefined Values</a></li>
+<li><a href="04_part_4.html#creating-lookupenumeration-tables"><span class="toc-section-number">6.2</span> Creating Lookup/Enumeration Tables</a></li>
+<li><a href="04_part_4.html#establishing-relationships-with-the-main-data-table"><span class="toc-section-number">6.3</span> Establishing Relationships with the Main Data Table</a></li>
+<li><a href="04_part_4.html#populating-the-enumeration-table"><span class="toc-section-number">6.4</span> Populating the Enumeration Table</a></li>
+<li><a href="04_part_4.html#using-the-enumeration-table-in-qgis"><span class="toc-section-number">6.5</span> Using the Enumeration Table in QGIS</a></li>
+<li><a href="04_part_4.html#understanding-and-visualizing-the-relations-between-the-database-tables"><span class="toc-section-number">6.6</span> Understanding and visualizing the relations between the database tables</a></li>
 </ul></li>
-<li><a href="06_part_6.html#exercise-6-advanced-topics"><span class="toc-section-number">7</span> Exercise 6: Advanced Topics</a>
+<li><a href="05_part_5.html#exercise-5-workflow-optimization-and-data-entry-forms"><span class="toc-section-number">7</span> Exercise 5: Workflow Optimization and Data Entry Forms</a>
 <ul>
-<li><a href="06_part_6.html#creating-triggers-for-data-entry-automation"><span class="toc-section-number">7.1</span> Creating Triggers for Data Entry Automation</a></li>
-<li><a href="06_part_6.html#creating-some-sample-data"><span class="toc-section-number">7.2</span> Creating some sample data</a></li>
+<li><a href="05_part_5.html#designing-a-data-entry-form"><span class="toc-section-number">7.1</span> Designing a Data Entry Form</a></li>
+<li><a href="05_part_5.html#discovering-table-relations-in-qgis-before-setting-up-the-forms"><span class="toc-section-number">7.2</span> Discovering table relations in QGIS before setting up the forms</a></li>
+<li><a href="05_part_5.html#enabling-and-configuring-form-widgets"><span class="toc-section-number">7.3</span> Enabling and Configuring Form Widgets</a></li>
+<li><a href="05_part_5.html#going-beyond-the-basics"><span class="toc-section-number">7.4</span> Going beyond the basics</a></li>
 </ul></li>
-<li><a href="07_part_7.html#final-words"><span class="toc-section-number">8</span> Final Words</a>
+<li><a href="06_part_6.html#exercise-6-advanced-topics"><span class="toc-section-number">8</span> Exercise 6: Advanced Topics</a>
 <ul>
-<li><a href="07_part_7.html#key-takeaways"><span class="toc-section-number">8.1</span> Key Takeaways:</a></li>
-<li><a href="07_part_7.html#next-steps"><span class="toc-section-number">8.2</span> Next Steps:</a></li>
-<li><a href="07_part_7.html#feedback"><span class="toc-section-number">8.3</span> Feedback:</a></li>
-<li><a href="07_part_7.html#further-contact-and-services"><span class="toc-section-number">8.4</span> Further Contact and Services:</a>
+<li><a href="06_part_6.html#creating-triggers-for-data-entry-automation"><span class="toc-section-number">8.1</span> Creating Triggers for Data Entry Automation</a></li>
+<li><a href="06_part_6.html#creating-some-sample-data"><span class="toc-section-number">8.2</span> Creating some sample data</a></li>
+</ul></li>
+<li><a href="07_part_7.html#final-words"><span class="toc-section-number">9</span> Final Words</a>
 <ul>
-<li><a href="07_part_7.html#how-we-serve-you"><span class="toc-section-number">8.4.1</span> How We Serve You:</a></li>
+<li><a href="07_part_7.html#key-takeaways"><span class="toc-section-number">9.1</span> Key Takeaways:</a></li>
+<li><a href="07_part_7.html#next-steps"><span class="toc-section-number">9.2</span> Next Steps:</a></li>
+<li><a href="07_part_7.html#feedback"><span class="toc-section-number">9.3</span> Feedback:</a></li>
+<li><a href="07_part_7.html#further-contact-and-services"><span class="toc-section-number">9.4</span> Further Contact and Services:</a>
+<ul>
+<li><a href="07_part_7.html#how-we-serve-you"><span class="toc-section-number">9.4.1</span> How We Serve You:</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -188,11 +194,11 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="exercise-4-creating-lookup-tables-and-utilizing-lookup-values" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Exercise 4: Creating Lookup Tables and Utilizing Lookup Values</h1>
+<div id="exercise-4-creating-lookup-tables-and-utilizing-lookup-values" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Exercise 4: Creating Lookup Tables and Utilizing Lookup Values</h1>
 <p>Now it’s time for you to think about data integrity! You have noticed that maintaining consistent and accurate data can sometimes be a challenge. Inconsistent values, misspellings, or different variations of the same category can lead to data quality issues and hinder effective analysis. This is where lookup tables come in, providing a solution to enhance data integrity and improve data entry workflows.</p>
-<div id="identifying-attributes-requiring-predefined-values" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Identifying Attributes Requiring Predefined Values</h2>
+<div id="identifying-attributes-requiring-predefined-values" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Identifying Attributes Requiring Predefined Values</h2>
 <p>By identifying specific attributes that benefit from predefined values, we can ensure consistency and enforce data integrity throughout our database.</p>
 <p>Looking at the tables we have created, we can identify certain attributes that require predefined values.</p>
 <table>
@@ -222,8 +228,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </tbody>
 </table>
 </div>
-<div id="creating-lookupenumeration-tables" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Creating Lookup/Enumeration Tables</h2>
+<div id="creating-lookupenumeration-tables" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Creating Lookup/Enumeration Tables</h2>
 <div class="code-box">
 <div class="sourceCode" id="cb5"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb5-1"><a href="04_part_4.html#cb5-1" aria-hidden="true"></a><span class="co">-- Lookup table for Dwellings&#39; Occupancy Status </span></span>
 <span id="cb5-2"><a href="04_part_4.html#cb5-2" aria-hidden="true"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> dwellings_occupancy_status ( </span>
@@ -245,8 +251,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <p>Add foreign keys to the main tables. Foreign keys establish a relationship between tables by linking a column in one table to the primary key column of another table. This ensures data integrity and enables more complex queries and data operations.</p>
 </div>
-<div id="establishing-relationships-with-the-main-data-table" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Establishing Relationships with the Main Data Table</h2>
+<div id="establishing-relationships-with-the-main-data-table" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Establishing Relationships with the Main Data Table</h2>
 <p>By referencing the primary key of one table from a column in another table, you ensure referential integrity and uphold a consistent data structure across multiple tables.</p>
 <div class="code-box">
 <div class="sourceCode" id="cb6"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb6-1"><a href="04_part_4.html#cb6-1" aria-hidden="true"></a><span class="co">-- Add foreign key constraint to Dwellings table</span></span>
@@ -271,8 +277,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <span id="cb6-20"><a href="04_part_4.html#cb6-20" aria-hidden="true"></a>    <span class="kw">REFERENCES</span> educational_facilities_facility_type (<span class="kw">id</span>);</span></code></pre></div>
 </div>
 </div>
-<div id="populating-the-enumeration-table" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Populating the Enumeration Table</h2>
+<div id="populating-the-enumeration-table" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Populating the Enumeration Table</h2>
 <p>Now we will populate the lookup tables with predefined values. You can also edit these afterwords in QGIS.</p>
 <div class="code-box">
 <div class="sourceCode" id="cb7"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb7-1"><a href="04_part_4.html#cb7-1" aria-hidden="true"></a><span class="co">-- Populate Dwellings&#39; Occupancy Status lookup table </span></span>
@@ -295,14 +301,14 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <span id="cb7-18"><a href="04_part_4.html#cb7-18" aria-hidden="true"></a>;</span></code></pre></div>
 </div>
 </div>
-<div id="using-the-enumeration-table-in-qgis" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Using the Enumeration Table in QGIS</h2>
+<div id="using-the-enumeration-table-in-qgis" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Using the Enumeration Table in QGIS</h2>
 <p>You can further customize and edit these tables in QGIS. To load them into QGIS, simply double-click the tables from the browser panel, and they will be added to your project. You can visualize and explore the data using the attribute table view in QGIS.</p>
 <p><img src="img/p1/edit_lookup_tables.gif" /></p>
 <p>In the next section, we will establish connections between these tables and the main tables, laying the foundation for ensuring data integrity and maintaining consistency in our database.</p>
 </div>
-<div id="understanding-and-visualizing-the-relations-between-the-database-tables" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> Understanding and visualizing the relations between the database tables</h2>
+<div id="understanding-and-visualizing-the-relations-between-the-database-tables" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> Understanding and visualizing the relations between the database tables</h2>
 <p>If you have installed a relational database management system such as pgAdmin or dBeaver you can visualize the relations. If not, don’t worry, simply refer to the image below to gain a clearer understanding of the interrelationships among the tables.</p>
 <p>In pgAdmin there’s the “ERD for Database” functionality:</p>
 <p><img src="img/p1/table_relations.png" /></p>
